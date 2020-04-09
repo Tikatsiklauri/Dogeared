@@ -7,8 +7,11 @@ const msp = (state) => ({
     formType: 'Log in'
 });
 
-const mdp = dispatch => ({
+const mdp = dispatch => {
+    // debugger
+    return{
     processForm: (user) => dispatch(login(user))
-});
+    }
+};
 
 export default connect(msp, mdp)(LoginForm);

@@ -37,7 +37,7 @@ class SignupForm extends React.Component {
                 <form onSubmit={this.handleSubmit} className="signup-form-box">
                    <ul>{showErrors}</ul>
                     <div className="signup-form">
-                        <h2>New here? Create a free account!</h2>
+                        <h3>New here? Create a free account!</h3>
                         <br />
                         <input type="text"
                             value={this.state.name}

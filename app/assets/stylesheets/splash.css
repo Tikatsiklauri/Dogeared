@@ -1,0 +1,47 @@
+.header-box {
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    padding: 10px;
+    border-bottom: 1px solid lightgrey;
+    background-color: #F4F1EA;
+    position: relative;
+    top: -20px;
+}
+.logo {
+    display: flex;
+    text-decoration: none;
+    font-size: 45px;
+    font-family: 'Open Sans Condensed', sans-serif;
+    align-self: flex-start;
+    position: relative;
+    bottom: 10px;
+    top: 5px;
+}
+
+.logo-part1 {
+    color: rgb(122, 108, 96);
+    font-weight: 100;
+}
+
+.logo div:nth-child(2) {
+    color: #462F1F;
+    font-weight: 350;
+}
+
+.splash-message {
+    height: 131px;
+    width: 100%;
+    align-items: center;
+    position: relative;
+}
+
+
+.splash-message h3 {
+    display: flex;
+    font-size: 40px;
+    font-weight: 500;
+    padding-left: 100px;
+    color: rgb(100, 64, 37);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
