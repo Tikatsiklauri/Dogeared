@@ -1,6 +1,42 @@
-.login-form-container {
-    float: right;
-    font-family: "Lato", "Helvetica Neue", "Helvetica", sans-serif;
+
+
+.login-form-box {
+    margin: -11px 0 20px 0;
+    height: 50px;
     padding-top: 5px;
-    padding-bottom: 5px;
+    padding-bottom: 10px;
+    text-align: center;
+    display: flex;
+    
+}
+
+.login-input-box {
+    padding: 5px;
+    margin: 2px;
+    width: 120px;
+    border-radius: 3px;
+    background: #FFFFFF;
+    border: #DCD6CC 1px solid;
+    font: 'Lato, sans-serif';
+    color: #333333;
+    height: 18px;
+
+}
+
+#login-button {
+    display: inline-block;
+    font-weight: normal;
+    border-radius: 3px;
+    border: #382110 1px solid;
+    color: white; 
+    background-color: #382110;
+    font-size: 14px;
+    font-family: "Lato", "Helvetica Neue", "Helvetica", sans-serif;
+    padding: 8px 12px;
+    text-align: center;
+    height: 35px;
+}
+
+#login-button:hover {
+    background-color: #58371F;
 }

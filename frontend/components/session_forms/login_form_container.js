@@ -4,7 +4,7 @@ import LoginForm from './login_form';
 
 const msp = (state) => ({
     errors: state.errors,
-    formType: 'Log in'
+    formType: 'Sign in'
 });
 
 const mdp = dispatch => {

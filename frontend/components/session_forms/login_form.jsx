@@ -1,4 +1,6 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
+
 
 class LoginForm extends React.Component {
     constructor(props) {
@@ -7,6 +9,7 @@ class LoginForm extends React.Component {
             email: '',
             password: ''
         }
+       
         this.handleSubmit = this.handleSubmit.bind(this)
 
     }
@@ -52,9 +55,10 @@ class LoginForm extends React.Component {
                         onChange={this.update('password')}
                         className="login-input-box"
                         />
-                        <input className="login-button" type="submit" value={this.props.formType}/>
+                        <input id="login-button" type="submit" value={this.props.formType}/>
                     </div>
                 </form>
+             
             </div>
         );
     }

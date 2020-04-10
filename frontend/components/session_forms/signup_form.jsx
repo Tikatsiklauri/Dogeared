@@ -1,4 +1,5 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
 
 class SignupForm extends React.Component {
     constructor(props) {
@@ -8,6 +9,11 @@ class SignupForm extends React.Component {
             email: '',
             password: ''
         }
+        this.demoUser = {
+            email: 'demouser',
+            password: 'testtest'
+        }
+
         this.handleSubmit = this.handleSubmit.bind(this)
 
     }
@@ -35,15 +41,15 @@ class SignupForm extends React.Component {
         return (
             <div className="signup-form-container">
                 <form onSubmit={this.handleSubmit} className="signup-form-box">
-                   <ul>{showErrors}</ul>
+                   <ul id="errors">{showErrors}</ul>
                     <div className="signup-form">
-                        <h3>New here? Create a free account!</h3>
+                        <h3 id="signup-message">New here? Create a free account!</h3>
                         <br />
                         <input type="text"
                             value={this.state.name}
                             placeholder="Name"
                             onChange={this.update('name')}
-                            className="sigup-input-box"
+                            className="signup-input-box"
                         />
                         <br/>
                         <input type="text"
@@ -63,6 +69,12 @@ class SignupForm extends React.Component {
                         <input className="signup-button" type="submit" value={this.props.formType} />
                     </div>
                 </form>
+                <form id="demo-user">
+                    <button className="demo-button" onClick={() => {
+                        // debugger
+                        this.props.login(this.demoUser).then(() => this.props.history.push('/navbar'))
+                    }} type="submit" value="Demo">Demo</button>
+                </form>
             </div>
         );
     }
@@ -70,4 +82,4 @@ class SignupForm extends React.Component {
 
 };
 
-export default SignupForm;
+export default withRouter(SignupForm);
