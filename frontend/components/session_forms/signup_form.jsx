@@ -30,19 +30,19 @@ class SignupForm extends React.Component {
 
 
     render() {
-        const { errors } = this.props
+        // const { errors } = this.props
 
-        const showErrors = errors.session.map((error, idx) => {
-            return (
-                <li key={idx}>
-                    {error}
-                </li>
-            )
-        })
+        // const showErrors = errors.session.map((error, idx) => {
+        //     return (
+        //         <li key={idx}>
+        //             {error}
+        //         </li>
+        //     )
+        // })
         return (
             <div className="signup-form-container">
                 <form onSubmit={this.handleSubmit} className="signup-form-box">
-                   <ul id="errors">{showErrors}</ul>
+                   {/* <ul id="errors">{showErrors}</ul> */}
                     <div className="signup-form">
                         <h3 id="signup-message">New here? Create a free account!</h3>
                         <br />

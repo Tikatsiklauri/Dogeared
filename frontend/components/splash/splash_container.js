@@ -5,7 +5,8 @@ import Splash from './splash';
 const msp = (state) => {
     // debugger
     return {
-        currentUser: state.session.id
+        currentUser: state.session.id,
+        errors: state.errors.session
     }
 };
 

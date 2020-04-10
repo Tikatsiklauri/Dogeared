@@ -1,34 +1,40 @@
 .main-header-nav {
     display: flex;
     width: 100%;
-    border: 1px solid rgb(165, 158, 158);
+    border: 1px solid rgb(189, 184, 184);
     height: 50px;
     font: 'Lato', sans-serif;
     background-color:  rgba(244,241,234,0.5);
     justify-content: space-between;
     flex-wrap: nowrap;
+    display: -webkit-flex;
 }
 .small-logo {
     text-decoration: none;
     font-size: 32px;
     padding-right: 5px;
     margin-top: 10px;
+    margin-right: 5px;
     font-family: 'Lato', "Helvetica Neue", Helvetica, sans-serif;
     position: relative;
     color: rgb(122, 108, 96);
     font-weight: 100; 
     margin-left: 90px;
+    display: block;
 }
 .small-logo-part2 {
     color: rgb(94, 62, 39);
     font-weight: inherit;
     font-weight: 250;
+    margin-right: 5px;
+    display: inline-block;
 }
 .personal-menu {
     color: rgb(94, 62, 39);
     display: flex;
     margin-right: 600px;
     margin-left: -50px;
+   
     /* margin-top: 15px; */
 }
 
@@ -36,6 +42,7 @@
     display: inline-block;
     
 }
+
 
 .personal-menu li:hover {
     background-color: #382110;
