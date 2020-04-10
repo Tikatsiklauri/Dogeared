@@ -10,6 +10,7 @@ class SignupForm extends React.Component {
             password: ''
         }
         this.demoUser = {
+            name: 'demouser',
             email: 'demouser',
             password: 'testtest'
         }
