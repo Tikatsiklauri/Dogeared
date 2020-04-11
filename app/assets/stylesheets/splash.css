@@ -19,7 +19,7 @@
     position: relative;
     color: rgb(122, 108, 96);
     font-weight: 100; 
-  
+    cursor: default;
  } 
 
 .logo-part2 {
@@ -32,6 +32,7 @@
     margin-right: 90px;
     height: 100px;
     position: relative;
+    margin-top: 7px;
 }
 
 .signup-div {
@@ -47,6 +48,7 @@
     margin-right: 60px;
     margin-top: 50px;
     align-items: center;
+    cursor: default;
     
 } 
 

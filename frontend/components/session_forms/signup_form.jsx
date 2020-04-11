@@ -11,7 +11,7 @@ class SignupForm extends React.Component {
         }
         this.demoUser = {
             name: 'demouser',
-            email: 'demouser',
+            email: 'demo@user',
             password: 'testtest'
         }
 
@@ -53,9 +53,9 @@ class SignupForm extends React.Component {
                             className="signup-input-box"
                         />
                         <br/>
-                        <input type="text"
+                        <input type="email"
                             value={this.state.email}
-                            placeholder="Email adress"
+                            placeholder="Email address"
                             onChange={this.update('email')}
                             className="signup-input-box"
                         />

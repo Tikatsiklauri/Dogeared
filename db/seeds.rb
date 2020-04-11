@@ -8,12 +8,12 @@
 
 testUser=User.create({
     name: 'test',
-    email: 'test',
+    email: 't@est',
     password: 'password'
 })
 
 demoUser=User.create({
     name: 'demouser',
-    email: 'demouser',
+    email: 'demo@user',
     password: 'testtest'
 })

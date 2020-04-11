@@ -20,7 +20,13 @@
     font: 'Lato, sans-serif';
     color: #333333;
     height: 18px;
-
+    outline: none;
+    
+}
+.login-input-box:focus {
+    border: 1px solid rgb(192, 182, 157);   
+    border-style: outset 0 0 1 1; 
+    
 }
 
 #login-button {
@@ -35,6 +41,12 @@
     padding: 8px 12px;
     text-align: center;
     height: 35px;
+    cursor: pointer;
+
+}
+
+#login-button:focus {
+    outline: none;
 }
 
 #login-button:hover {

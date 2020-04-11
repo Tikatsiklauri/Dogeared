@@ -19,6 +19,7 @@
     font-weight: normal;
     font-weight: 400;
     margin-bottom: -3px;
+    cursor: auto;
 }
 
 .signup-input-box {
@@ -34,7 +35,14 @@
     background: #FFFFFF;
     font-family: 'Lato', "Helvetica Neue", Helvetica, sans-serif;
     color: #333333;
+    outline: none;
 
+}
+
+.signup-input-box:focus {
+    border: 1px solid rgb(192, 182, 157);   
+    border-style: outset 0 0 1 1; 
+    
 }
 
 .signup-button {
@@ -48,7 +56,12 @@
     margin-top: -12px;
     margin-right: 10px;
     line-height: 22px;
+    cursor: pointer
 
+}
+
+.signup-button:focus {
+    outline: none;
 }
 
 .signup-button:hover {
@@ -70,6 +83,14 @@
     margin-top: -45px;
     margin-left: -12px;
     line-height: 22px;
+    cursor: pointer;
 
+}
+.demo-button:focus {
+    outline: none;
+}
+
+.demo-button:hover {
+     background-color: #FFD56D;
 }
 

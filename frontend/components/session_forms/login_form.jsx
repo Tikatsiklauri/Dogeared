@@ -42,7 +42,7 @@ class LoginForm extends React.Component {
              <form onSubmit={this.handleSubmit} className="login-form-box">
                     <div className="login-form">
                      <br/>
-                        <input type="text"
+                        <input type="email"
                         value={this.state.email}
                         placeholder="Email adress"
                         onChange={this.update('email')}
