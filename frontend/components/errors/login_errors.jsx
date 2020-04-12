@@ -1,5 +1,5 @@
 import React from 'react';
-import { withRouter } from 'react-router-dom';
+import { withRouter, Redirect } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 
 class LoginErrors extends React.Component {
@@ -10,10 +10,17 @@ class LoginErrors extends React.Component {
             password: ''
         }
         this.handleSubmit = this.handleSubmit.bind(this)
+        this.handleClick = this.handleClick.bind(this)
     }
 
-    componentDidMount() {
-        this.props.resetErrors()
+    // componentDidMount() {
+    //     this.props.resetErrors()
+    // }
+    handleClick() {
+        // debugger
+        this.props.resetErrors();
+        // debugger
+        this.props.history.replace("/")
     }
 
     handleSubmit(e) {
@@ -63,11 +70,12 @@ class LoginErrors extends React.Component {
                                 placeholder="Password"
                                 onChange={this.update('password')}
                                 className="login-input"
+                                autoComplete='off'
                             />
                             <br/>
                             <input id="signin-button" type="submit" value="Sign in"/>
                             </form>
-                            <p id="member">Not a member? <Link to="/" >Sign up</Link></p>
+                            <div id="member">Not a member? <div onClick={this.handleClick}>Sign up</div></div>
                         </div>
                    </div>
                </div>
@@ -77,4 +85,4 @@ class LoginErrors extends React.Component {
     }
 }
 
-export default LoginErrors;
+export default withRouter(LoginErrors);

@@ -61,6 +61,7 @@ class SignupForm extends React.Component {
                             placeholder="Password"
                             onChange={this.update('password')}
                             className="signup-input-box"
+                            autoComplete='off'
                         />
                         <br/>
                         <input className="signup-button" type="submit" value={this.props.formType} />
