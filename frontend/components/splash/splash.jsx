@@ -7,15 +7,15 @@ class Splash extends React.Component {
         super(props)
     }
     render() {
-        const { errors } = this.props
+        // const { errors } = this.props
 
-        const showErrors = errors.map((error, idx) => {
-            return (
-                <li key={idx}>
-                    {error}
-                </li>
-            )
-        })
+        // const showErrors = errors.map((error, idx) => {
+        //     return (
+        //         <li key={idx}>
+        //             {error}
+        //         </li>
+        //     )
+        // })
         return (
             <div className="allsplash">
                 <div className="books-image">
@@ -30,7 +30,7 @@ class Splash extends React.Component {
                                 </div>
                                 
                             </div>
-                                <ul className="error-messages">{showErrors}</ul>
+                                {/* <ul className="error-messages">{showErrors}</ul> */}
                                 <div className='signup-container'><SignupFormContainer /></div>
                         </div>
                 </div>  

@@ -1,5 +1,5 @@
 import React from 'react';
-import { withRouter } from 'react-router-dom';
+import { withRouter, Redirect } from 'react-router-dom';
 
 
 class LoginForm extends React.Component {
@@ -18,24 +18,20 @@ class LoginForm extends React.Component {
         // debugger
         const user = Object.assign({}, this.state)
         this.props.processForm(user) 
-        // .then(() => this.props.history.push('/main'));  
+        // .then(() => this.props.history.push('/navbar'));  
     }
-
+    
     update(field) {
         return e => this.setState({[field]: e.currentTarget.value});
     }
-
-
+    
+    
     render() {
-        // const { errors } = this.props
-        
-        // const showErrors = errors.map((error, idx) => {
-        //      return (
-        //         <li key={idx}>
-        //             {error}
-        //         </li>
-        //      )
-        // })
+        let errors = this.props.errors
+        if (errors.length > 0) {
+           return <Redirect to="/errors" />
+        }
+      
 
         return (
             <div className="login-form-container">
@@ -44,7 +40,7 @@ class LoginForm extends React.Component {
                      <br/>
                         <input type="email"
                         value={this.state.email}
-                        placeholder="Email adress"
+                        placeholder="Email address"
                         onChange={this.update('email')}
                         className="login-input-box"
                         />
@@ -66,4 +62,4 @@ class LoginForm extends React.Component {
 
 };
 
-export default LoginForm;
+export default withRouter(LoginForm);

@@ -8,7 +8,8 @@
     /* justify-content: space-between; */
     /* flex-wrap: nowrap; */
     flex-wrap: wrap;
-    position: fixed;
+    position: relative;
+
     
 }
 
@@ -93,6 +94,8 @@
     position: relative;
     /* left: 500px; */
     max-width: 100%;
+    position: absolute;
+    right: 10px;
 }
 
 .logout:focus {

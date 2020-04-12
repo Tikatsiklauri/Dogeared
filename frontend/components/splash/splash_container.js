@@ -6,7 +6,7 @@ const msp = (state) => {
     // debugger
     return {
         currentUser: state.session.id,
-        errors: state.errors.session
+        // errors: state.errors.session
     }
 };
 

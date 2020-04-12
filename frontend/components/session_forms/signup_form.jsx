@@ -1,5 +1,5 @@
 import React from 'react';
-import { withRouter } from 'react-router-dom';
+import { withRouter, Redirect } from 'react-router-dom';
 
 class SignupForm extends React.Component {
     constructor(props) {
@@ -30,17 +30,13 @@ class SignupForm extends React.Component {
 
 
     render() {
-        // const { errors } = this.props
+        let errors = this.props.errors
+        if (errors.length > 0) {
+            return <Redirect to="/moreErrors" />
+        }
 
-        // const showErrors = errors.session.map((error, idx) => {
-        //     return (
-        //         <li key={idx}>
-        //             {error}
-        //         </li>
-        //     )
-        // })
         return (
-            <div className="signup-form-container">
+            <div className="signup-container">
                 <form onSubmit={this.handleSubmit} className="signup-form-box">
                    {/* <ul id="errors">{showErrors}</ul> */}
                     <div className="signup-form">
@@ -83,4 +79,4 @@ class SignupForm extends React.Component {
 
 };
 
-export default withRouter(SignupForm);
+export default SignupForm;
