@@ -14,7 +14,7 @@ class SignupForm extends React.Component {
             email: 'demo@user',
             password: 'testtest'
         }
-
+        this.changeState = this.changeState.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)
 
     }
@@ -28,11 +28,20 @@ class SignupForm extends React.Component {
         return e => this.setState({ [field]: e.currentTarget.value });
     }
 
+    changeState(){
+        this.props.formType('signup')
+    }
+
+    // componentDidMount(){
+        // dont need this anymore-lawrence
+    //     this.props.formType('signup')
+    // }
+
 
     render() {
         let errors = this.props.errors
         if (errors.length > 0) {
-            return <Redirect to="/moreErrors" />
+            return <Redirect to='/errors'/>
         }
 
         return (
@@ -64,12 +73,11 @@ class SignupForm extends React.Component {
                             autoComplete='off'
                         />
                         <br/>
-                        <input className="signup-button" type="submit" value={this.props.formType} />
+                        <input className="signup-button" type="submit" value={this.props.formTypeName} onClick={this.changeState} />
                     </div>
                 </form>
                 <form id="demo-user">
                     <button className="demo-button" onClick={() => {
-                        // debugger
                         this.props.login(this.demoUser).then(() => this.props.history.push('/navbar'))
                     }} type="submit" value="Demo">Demo</button>
                 </form>

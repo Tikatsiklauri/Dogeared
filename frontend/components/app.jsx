@@ -14,7 +14,7 @@ const App = () => (
        */}
 
     <ProtectedRoute exact path="/navbar" component={NavbarContainer}/>
-    <AuthRoute exact path="/moreErrors" component={SignupErrorsContainer}/>
+    {/* <AuthRoute exact path="/moreErrors" component={SignupErrorsContainer}/> */}
     <AuthRoute exact path="/errors" component={LoginErrorsContainer}/>
     <AuthRoute  exact path="/" component={SplashContainer}/> 
     

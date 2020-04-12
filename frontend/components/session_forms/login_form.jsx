@@ -11,11 +11,11 @@ class LoginForm extends React.Component {
         }
        
         this.handleSubmit = this.handleSubmit.bind(this)
+        this.changeState = this.changeState.bind(this)
 
     }
     handleSubmit(e) {
         e.preventDefault();
-        // debugger
         const user = Object.assign({}, this.state)
         this.props.processForm(user) 
         // .then(() => this.props.history.push('/navbar'));  
@@ -24,18 +24,17 @@ class LoginForm extends React.Component {
     update(field) {
         return e => this.setState({[field]: e.currentTarget.value});
     }
+    changeState(){
+        this.props.formType('login')
+
+    }
     
     
     render() {
         let errors = this.props.errors
         if (errors.length > 0) {
-        //    return <Redirect to="/errors"/>
+           return <Redirect to="/errors"/>
 
-           return <Redirect to={{
-            pathname: '/errors',
-            state: { formType: 'login' }
-        }}
-/>
         }
       
 
@@ -57,7 +56,7 @@ class LoginForm extends React.Component {
                         className="login-input-box"
                         autoComplete='off'
                         />
-                        <input id="login-button" type="submit" value={this.props.formType}/>
+                        <input id="login-button" type="submit" value={this.props.formTypeName} onClick={this.changeState}/>
                         {/* <ul id="errors">{showErrors}</ul> */}
                     </div>
                 </form>

@@ -3,7 +3,6 @@ import { signup, login } from '../../actions/session_actions';
 import Splash from './splash';
 
 const msp = (state) => {
-    // debugger
     return {
         currentUser: state.session.id,
         // errors: state.errors.session

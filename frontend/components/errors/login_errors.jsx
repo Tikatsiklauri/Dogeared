@@ -6,6 +6,7 @@ class LoginErrors extends React.Component {
     constructor(props) {
         super(props) 
         this.state = {
+            name: '',
             email: '',
             password: ''
         }
@@ -17,17 +18,19 @@ class LoginErrors extends React.Component {
     //     this.props.resetErrors()
     // }
     handleClick() {
-        // debugger
         this.props.resetErrors();
-        // debugger
         this.props.history.replace("/")
     }
 
     handleSubmit(e) {
+        const {formType} = this.props;
         e.preventDefault();
-        // debugger
         const user = Object.assign({}, this.state)
-        this.props.processForm(user)
+        if(formType === 'login'){
+            this.props.processForm(user)
+        } else {
+            this.props.signup(user)
+        }
         // .then(() => this.props.history.push('/navbar'));  
     }
 
@@ -35,7 +38,7 @@ class LoginErrors extends React.Component {
         return e => this.setState({ [field]: e.currentTarget.value });
     }
     render() {
-        const { errors } = this.props
+        const { errors, formType } = this.props
 
         const showErrors = errors.map((error, idx) => {
             return (
@@ -57,7 +60,19 @@ class LoginErrors extends React.Component {
                             <ul className="error-message">{showErrors}</ul>
                        </div>
                        <div className="login-form-display">
-                            <form onSubmit={this.handleSubmit} className="login-box">
+                        <form onSubmit={this.handleSubmit} className="login-box">
+
+                        {formType !== 'login' ? 
+                            <input type="text"
+                            value={this.state.name}
+                            placeholder="Name"
+                            onChange={this.update('name')}
+                            className="signup"
+                        />
+                        : 
+                        null
+                        }
+                        <br />
                             <input type="email"
                                 value={this.state.email}
                                 placeholder="Email address"
@@ -73,9 +88,23 @@ class LoginErrors extends React.Component {
                                 autoComplete='off'
                             />
                             <br/>
-                            <input id="signin-button" type="submit" value="Sign in"/>
+                            {
+                                formType !== 'login' ?
+                                <input id="signup" type="submit" value="Sign up"/>
+
+                                :
+                                <input id="signin" type="submit" value="Sign in"/>
+
+                            }
                             </form>
-                            <div id="member">Not a member? <div onClick={this.handleClick}>Sign up</div></div>
+                            
+                            { formType !== 'login' ?
+                                <div id="member">Already a member? <div onClick={this.handleClick}>Sign in</div></div>
+                                :
+                                <div id="member">Not a member? <div onClick={this.handleClick}>Sign up</div></div>
+                            }
+
+                            
                         </div>
                    </div>
                </div>
