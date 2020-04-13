@@ -49,13 +49,27 @@ class LoginErrors extends React.Component {
         })
         return (
             <div className="errors-container">
+                <div className="logo-container">
+                    <div className="sm-logo">Dog<span className="sm-logo-part2">Eared</span></div>
+                </div>
+            
                <div className="main-content">
                    <div className="right-error-box">
+                       {formType !== 'login' ? 
+                        <div className="directions">Sign up for DogEared 
+                        <p className="reason-for-signup">
+                            Sign up to see what your friends are reading, get book 
+                            recommendations, and join the world’s largest community of readers.</p>
+                        </div>
+                       :
+                       <div className="directions">Sign in to DogEared</div>
+                       }
                        <div className="third-party-signin">
                            <button id="facebook" type="submit" value="Continue with Facebook">Continue with Facebook</button>
                            <br/>
                            <button id="amazon" type="submit" value="Continue with Amazon">Continue with Amazon</button>
                        </div>
+                       <p id="or">or</p>
                        <div className="error-flashmessage-box">
                             <ul className="error-message">{showErrors}</ul>
                        </div>
@@ -63,53 +77,59 @@ class LoginErrors extends React.Component {
                         <form onSubmit={this.handleSubmit} className="login-box">
 
                         {formType !== 'login' ? 
+                            <label className="label">Name
                             <input type="text"
                             value={this.state.name}
                             placeholder="Name"
                             onChange={this.update('name')}
-                            className="signup"
-                        />
+                            className="signup-area"
+                            />
+                            </label>
                         : 
                         null
                         }
                         <br />
+                            <label className="label">Email
                             <input type="email"
                                 value={this.state.email}
                                 placeholder="Email address"
                                 onChange={this.update('email')}
-                                className="login-input"
+                                className="signup-area"
                             />
+                            </label>
                             <br/>
+                            <label className="label">Password
                             <input type="password"
                                 value={this.state.password}
                                 placeholder="Password"
                                 onChange={this.update('password')}
-                                className="login-input"
+                                className="signup-area"
                                 autoComplete='off'
                             />
+                            </label>
                             <br/>
                             {
                                 formType !== 'login' ?
                                 <input id="signup" type="submit" value="Sign up"/>
 
                                 :
-                                <input id="signin" type="submit" value="Sign in"/>
+                                <input id="signup" type="submit" value="Sign in"/>
 
                             }
                             </form>
                             
                             { formType !== 'login' ?
-                                <div id="member">Already a member? <div onClick={this.handleClick}>Sign in</div></div>
+                                <div id="member">Already a member? <div className="link" onClick={this.handleClick}>Sign in</div></div>
                                 :
-                                <div id="member">Not a member? <div onClick={this.handleClick}>Sign up</div></div>
+                                <div id="member">Not a member? <div className="link" onClick={this.handleClick}>Sign up</div></div>
                             }
 
                             
                         </div>
                    </div>
                </div>
-
             </div>
+           
         )
     }
 }

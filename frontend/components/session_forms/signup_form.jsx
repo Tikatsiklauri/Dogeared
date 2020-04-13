@@ -32,11 +32,6 @@ class SignupForm extends React.Component {
         this.props.formType('signup')
     }
 
-    // componentDidMount(){
-        // dont need this anymore-lawrence
-    //     this.props.formType('signup')
-    // }
-
 
     render() {
         let errors = this.props.errors

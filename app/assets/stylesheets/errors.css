@@ -1,0 +1,66 @@
+.errors-container {
+    display: flex;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(235, 231, 225);
+}
+.logo-container {
+
+}
+.main-container {
+    display: flex;
+    position: center;
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+}
+
+.sm-logo {
+    text-decoration: none;
+    font-size: 30px;
+    padding-right: 5px;
+    margin-top: 5px;
+    float: left;
+    margin-right: 50px;
+    padding-right: 5px;
+    padding-left: 5px;
+    font-family: 'Lato', "Helvetica Neue", Helvetica, sans-serif;
+    color: rgb(122, 108, 96);
+    font-weight: 100; 
+    display: flex;
+    cursor: default;
+}
+.sm-logo-part2 {
+    color: rgb(94, 62, 39);
+    font-weight: inherit;
+    font-weight: 250;
+    margin-right: 5px;
+    display: inline-block;
+}
+
+.main-content {
+    background-color: white;
+    width: 540px;
+    text-align: center;
+    border: 1px solid lightgray;
+}
+
+.directions {
+  adding: 0px 0px 2px 0px;
+    font-size: 20px;
+    font-family: "Merriweather", Georgia, "Times New Roman", serif;
+    font-weight: bold;
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: #382110;
+    line-height: 24px;
+    /* width: 540px; */
+}
+.reason-for-signup {
+    font-size: 16px;
+    line-height: 1.4;
+    text-align: center;
+    color: black;
+    font-weight: normal;
+}
