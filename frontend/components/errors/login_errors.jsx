@@ -56,10 +56,11 @@ class LoginErrors extends React.Component {
                <div className="main-content">
                    <div className="right-error-box">
                        {formType !== 'login' ? 
-                        <div className="directions">Sign up for DogEared 
+                            <div className="directions">Sign up for DogEared
                         <p className="reason-for-signup">
-                            Sign up to see what your friends are reading, get book 
-                            recommendations, and join the world’s largest community of readers.</p>
+                            Sign up to see what your friends are reading, get book recommendations, 
+                            <br/>
+                            and join the world’s largest community of readers.</p>
                         </div>
                        :
                        <div className="directions">Sign in to DogEared</div>
@@ -69,7 +70,14 @@ class LoginErrors extends React.Component {
                            <br/>
                            <button id="amazon" type="submit" value="Continue with Amazon">Continue with Amazon</button>
                        </div>
-                       <p id="or">or</p>
+                       <div className="or-box">
+                       <h2 id="or">or</h2>
+                        </div>
+                       {formType !== 'login' ? 
+                       <div className="email-instead">Sign Up with Email</div>
+                       :
+                       null
+                       }
                        <div className="error-flashmessage-box">
                             <ul className="error-message">{showErrors}</ul>
                        </div>
@@ -116,13 +124,13 @@ class LoginErrors extends React.Component {
                                 <input id="signup" type="submit" value="Sign in"/>
 
                             }
-                            </form>
-                            
                             { formType !== 'login' ?
                                 <div id="member">Already a member? <div className="link" onClick={this.handleClick}>Sign in</div></div>
                                 :
                                 <div id="member">Not a member? <div className="link" onClick={this.handleClick}>Sign up</div></div>
                             }
+                            </form>
+                            
 
                             
                         </div>
