@@ -1,6 +1,7 @@
 import React from 'react'
 import LoginFormContainer from '../session_forms/login_form_container';
 import SignupFormContainer from '../session_forms/signup_form_container';
+import BookIndexContainer from '../books/book_index_container';
 
 class Splash extends React.Component {
     constructor(props) {
@@ -33,7 +34,23 @@ class Splash extends React.Component {
                                 <ul className="error-messages">{showErrors}</ul>
                                 <div className='signup-container'><SignupFormContainer /></div>
                         </div>
-                </div>  
+                </div> 
+                <div className="text-section">
+                    <div className="suggest-texts"><h3>Deciding what to read next?</h3>
+                        <p>You’re in the right place. Tell us what titles or genres you’ve 
+                            enjoyed in the past, and we’ll give you surprisingly insightful 
+                            recommendations.
+                        </p>
+                    </div>
+                    <div className="suggest-texts"><h3>What are your friends reading?</h3>
+                         <p>Chances are your friends are discussing their favorite (and least favorite)
+                            books on Goodreads.
+                        </p>
+                    </div>
+                    <div className="books-section">
+                        <BookIndexContainer />
+                    </div>
+                </div> 
             </div>
         )
     }

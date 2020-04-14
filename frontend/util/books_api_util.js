@@ -5,9 +5,9 @@ export const fetchBooks = () => (
     })
 );
 
-export const fetchBook = (bookId) => (
+export const fetchBook = (id) => (
     $.ajax({
         method: 'GET',
-        url: `/api/books${bookId}`
+        url: `/api/books/${id}`
     })
 );
