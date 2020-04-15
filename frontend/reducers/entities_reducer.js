@@ -5,7 +5,7 @@ import booksReducer from './books_reducer';
 
 const entitiesReducer = combineReducers({
     users: usersReducer,
-    formType: formTypeReducer
+    formType: formTypeReducer,
     books: booksReducer
 });
 
