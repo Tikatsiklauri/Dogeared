@@ -1,9 +1,17 @@
 import React from 'react';
+import {withRouter} from 'react-router-dom';
 
 
 class BookShow extends React.Component {
+    constructor(props) {
+        super(props)
+        this.handleClick = this.handleClick.bind(this);
+    }
     componentDidMount() {
         this.props.fetchBook(this.props.match.params.bookId)
+    }
+    handleClick() {
+        this.props.history.replace("/")
     }
 
     render() {
@@ -16,8 +24,8 @@ class BookShow extends React.Component {
                         <li className="clickable" role="button" aria-haspopup="true">Home</li>
                         <li className="clickable" role="button" aria-haspopup="true">My Books</li>
                         <li className="clickable" role="button" aria-haspopup="true">Browse</li>
-                        <li className="clickable" role="button" aria-haspopup="true">Sign In</li>
-                        <li className="clickable" role="button" aria-haspopup="true">Join</li>    
+                        <li className="clickable" role="button" aria-haspopup="true" onClick={this.handleClick}>Sign In</li>
+                        <li className="clickable" role="button" aria-haspopup="true" onClick={this.handleClick}>Join</li>    
                     </ul>
                    
                 </nav>
@@ -38,4 +46,4 @@ class BookShow extends React.Component {
     }
 }
 
-export default BookShow;
+export default withRouter(BookShow);

@@ -31,6 +31,9 @@ class Navbar extends React.Component {
                     <button className="logout" onClick={this.props.logout}>Sign out</button>
                    
                 </nav>
+                <div className="">
+
+                </div>
         )
     }
 }
