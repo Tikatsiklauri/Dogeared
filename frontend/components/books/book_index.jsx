@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { Route } from 'react-router-dom';
+import BookShowContainer from './book_show_container'; 
 
 class BooksIndex extends React.Component {
     constructor(props) {
@@ -20,6 +22,7 @@ class BooksIndex extends React.Component {
         })
         return (
             <div className="books">
+                <Route path="/books/:bookId" component={BookShowContainer}/>
                 <ul className="book-list">
                   {displayBooks}  
                 </ul>

@@ -4,6 +4,7 @@ import NavbarContainer from './navbar_logged_in/navbar_container';
 import SplashContainer from './splash/splash_container';
 import LoginFromContainer from './session_forms/login_form_container';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
+import BookShowContainer from '../components/books/book_show_container';
 
 const App = () => (
     <div>
@@ -11,8 +12,10 @@ const App = () => (
             <h1>Welcome to Dogeared!</h1>
         </header>
        */}
-     
-        <AuthRoute to="/" component={SplashContainer}/> 
+       <Switch>
+            <AuthRoute exact path="/" component={SplashContainer}/> 
+            <AuthRoute path="/books/:bookId" component={BookShowContainer} />
+        </Switch>
         <ProtectedRoute to="/navbar" component={NavbarContainer}/>
     </div>
 );

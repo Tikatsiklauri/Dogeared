@@ -1,4 +1,4 @@
 class Book < ApplicationRecord
-    validates :title, :author, :genre, presence: true, uniqueness:true
-    validates :date, :overview, presence: true
+    validates :title, :author, presence: true, uniqueness:true
+    validates :date, :overview, :genre, presence: true
 end

@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { fetchBooks } from '../../actions/book_actions';
-import BooksIndex from './books_index';
+import BooksIndex from './book_index';
 
 const msp = (state) => ({
     books: Object.values(state.entities.books)
