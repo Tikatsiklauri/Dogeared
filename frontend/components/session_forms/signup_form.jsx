@@ -35,6 +35,7 @@ class SignupForm extends React.Component {
 
     render() {
         let errors = this.props.errors
+        // debugger
         if (errors.length > 0) {
             return <Redirect to='/errors'/>
         }
@@ -83,4 +84,4 @@ class SignupForm extends React.Component {
 
 };
 
-export default SignupForm;
+export default withRouter(SignupForm);

@@ -2,10 +2,13 @@ import { connect } from 'react-redux';
 import { login,receiveFormType } from '../../actions/session_actions';
 import LoginForm from './login_form';
 
-const msp = (state) => ({
+const msp = (state) => {
+    debugger
+    return {
     errors: state.errors.session,
     formTypeName: 'Sign in'
-});
+    }
+};
 
 const mdp = dispatch => {
     return{

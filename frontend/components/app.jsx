@@ -10,15 +10,13 @@ import BookShowContainer from '../components/books/book_show_container';
 
 const App = () => (
     <div>
-         {/* <header>
-            <h1>Welcome to Dogeared!</h1>
-        </header>
-       */}
-       <Switch>
             <AuthRoute exact path="/" component={SplashContainer}/> 
-            <AuthRoute path="/books/:bookId" component={BookShowContainer} />
-        </Switch>
-        <ProtectedRoute to="/navbar" component={NavbarContainer}/>
+            <AuthRoute exact path="/errors" component={LoginErrorsContainer} />
+            <Switch>
+            <ProtectedRoute exact path="/navbar" component={NavbarContainer}/>
+            <ProtectedRoute path="/books/:bookId" component={BookShowContainer} />
+            </Switch>
+        {/* <Route to="/books/:bookId" component={BookShowContainer} /> */}
     </div>
 );
 
