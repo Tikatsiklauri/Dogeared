@@ -13,7 +13,7 @@ class BooksIndex extends React.Component {
 
     render() {
         const { books } = this.props;
-        const displayBooks = books.map((book, idx) => {
+        const displayBooks = books.map((book) => {
             return (
                 <li className="each-book"> 
                     <img src={book.image_url} />

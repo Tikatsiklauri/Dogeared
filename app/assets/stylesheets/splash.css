@@ -8,6 +8,8 @@
 
 .allsplash {
     width: 100%;
+    background-color: #F3F2E7;
+    padding-bottom: 20px;
 }
  .books-image {
     height: 370px;
@@ -97,19 +99,20 @@
     justify-content: center;
     padding: 10px;
     margin-left: 20px; 
+    margin-top: -30px;
 }
 .suggest-texts {
     width: 40%;
     font-family: 'Lato', "Helvetica Neue", Helvetica, sans-serif;
     font-size: 14px;
     padding: 15px;
-    color: rgb(61, 50, 41);
+    color: #3D3D3D;
 }
 h3 {
     font-size: 18px;
     font-family: 'Lato', "Helvetica Neue", Helvetica, sans-serif;
     /* font-weight: inherit; */
-    font-weight: 500;
+    font-weight: 400;
     color: black;
     margin-bottom: -3px;
 
@@ -125,7 +128,6 @@ h3 {
     background-color: #f4f2e9;
     height: auto;
     border-radius: 24px;
-
    
 }
 

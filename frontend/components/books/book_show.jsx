@@ -35,6 +35,7 @@ class BookShow extends React.Component {
                     </ul>
                     <button className="logout" onClick={this.props.logout}>Sign out</button>
                 </nav>
+            <div className="full-page">
             <div className="book-section">
                 <div className="book-details-div">
                     <div className="image">
@@ -44,10 +45,11 @@ class BookShow extends React.Component {
                     <div className="book-info">
                         <ul className="description-area">
                             <li className="title">{book.title}</li>
-                            <li className="author">{`By ${book.author}`}</li>
+                            <li className="author">{`by ${book.author}`}</li>
                             <li className="overview">{book.overview}</li>
                         </ul>
                     </div>
+            </div>
             </div>
         </div>
         )
