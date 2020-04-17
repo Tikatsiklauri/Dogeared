@@ -13,6 +13,13 @@ class LoginErrors extends React.Component {
         }
         this.handleSubmit = this.handleSubmit.bind(this)
         this.handleClick = this.handleClick.bind(this)
+        this.handleButton = this.handleButton.bind(this)
+        
+        this.demoUser = {
+            name: 'demouser',
+            email: 'demo@user',
+            password: 'testtest'
+        }
     }
 
     componentWillMount() {
@@ -28,6 +35,12 @@ class LoginErrors extends React.Component {
     //first we are setting state inside componentdidmount based on formtype
     //then we are using componentdidupdate to see if there was a state change
     // inside handle click change the state(hopefuelly this causes rerender without componnodentupdate)
+    handleButton() {
+        this.props.resetErrors();
+        this.props.history.replace("/");
+    }
+
+    
 
     handleClick() {
         this.props.resetErrors();
@@ -70,7 +83,7 @@ class LoginErrors extends React.Component {
             
                <div className="main-content">
                    <div className="right-error-box">
-                       {!showLoginPage ? 
+                       {showLoginPage ? 
                             <div className="directions">Sign up for DogEared
                         <p className="reason-for-signup">
                             Sign up to see what your friends are reading, get book recommendations, 
@@ -81,9 +94,10 @@ class LoginErrors extends React.Component {
                        <div className="directions">Sign in to DogEared</div>
                        }
                        <div className="third-party-signin">
-                           <button id="facebook" type="submit" value="Continue with Facebook">Continue with Facebook</button>
+                           <button id="facebook"  onClick={this.handleButton}>Go back to Home Page</button>
                            <br/>
-                           <button id="amazon" type="submit" value="Continue with Amazon">Continue with Amazon</button>
+                            <button id="amazon" onClick={() => {
+                                this.props.processForm(this.demoUser).then(() => this.props.history.push('/navbar'))}}>Continue with Demo User</button>
                        </div>
                        <div className="or-box">
                        <h2 id="or">or</h2>

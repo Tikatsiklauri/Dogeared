@@ -28,8 +28,10 @@
 }
 .book-description {
     font-family: "Helvetica Neue", Helvetica, sans-serif;
-    font-size: 13px;
+    font-size: 14px;
     height: 150px;
+    width: 350px;
+ 
    
     /* height: 400px; */
      /* display: block; */
@@ -39,16 +41,9 @@
   /* white-space: nowrap; */
   /* text-overflow: ellipsis;  */
 }
-.linkToSHow {
-    /* height: 20px;
-    width: 30px */
+#continue {
     color: green;
-    /* height: 50px */
-    text-decoration: none;
-  
-}
-.gotoShow {
-   
+    cursor: pointer;
 }
 
 .books-li {
@@ -84,5 +79,5 @@
      font-family: 'Merriweather', Georgia, serif;
     font-weight: 400;
     font-size: 15px;
-    padding-bottom: 5px;
+    padding-bottom: 20px;
 }

@@ -21,6 +21,7 @@
     color: #333333;
     height: 18px;
     outline: none;
+    font-size: 13px;
     
 }
 .login-input-box:focus {

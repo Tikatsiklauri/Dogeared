@@ -94,6 +94,10 @@
     border-radius: 6px 6px 6px 6px;
     justify-content: center;
     font-size: 14px;
+    cursor: pointer;
+}
+.facebook:focus {
+    outline: none;
 }
 
 #amazon {
@@ -108,6 +112,10 @@
     border-radius: 6px 6px 6px 6px;
     justify-content: center;
      font-size: 14px;
+     cursor: pointer;
+}
+.amazon:focus {
+    outline: none;
 }
 .or-box {
     display: flex;
@@ -149,13 +157,15 @@ h2:after {
     border-radius: 6px 6px 6px 6px;
 }
 .error-message {
-       background-color: #fdb7ad;
+    background-color: #fdb7ad;
     border: 1px solid #FA604A;
     border-radius: 3px;
     color: #333333;
     margin: 16px 0;
     padding: 12px;
     text-align: center;
+    font-family: 'Lato,' "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 12px;
 }
 
 .login-form-display {

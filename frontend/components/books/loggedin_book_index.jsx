@@ -23,7 +23,7 @@ class LoggedInBooksIndex extends React.Component {
     }
        let chars = overview.split('');
        let overviewSnippet = []
-       let maxWords = 150;
+       let maxWords = 300;
 
        for (let index = 0; index < maxWords; index++) {
            overviewSnippet.push(chars[index]);
@@ -49,9 +49,8 @@ class LoggedInBooksIndex extends React.Component {
                 <div className="half-info">
                     <li className="book-title">{book.title}</li>
                     <li className="book-author">{`by ${book.author}`}</li>
-                    <li className="book-description">{this.handleOverview(book.overview)}<span>...</span><span onClick={() => this.showBook(book.id)}> Continue reading</span></li>
+                    <li className="book-description">{this.handleOverview(book.overview)}<span>...</span><span id="continue"onClick={() => this.showBook(book.id)}>Continue reading</span></li>
 
-                    {/* <div id="gotoShow"><li>...</li><Link className="linkToSHow" to={`/books/${book.id}`}>Continue reading</Link></div> */}
                 </div>
                     
                 </div>

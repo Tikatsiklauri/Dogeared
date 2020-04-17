@@ -31,7 +31,7 @@
     font-size: 16px;
     border: #DCD6CC 1px solid;
     border-radius: 3px;
-    font-weight: lighter;
+    font-weight: 400;
     background: #FFFFFF;
     font-family: 'Lato', "Helvetica Neue", Helvetica, sans-serif;
     color: #333333;
@@ -56,7 +56,8 @@
     margin-top: -12px;
     margin-right: 10px;
     line-height: 22px;
-    cursor: pointer
+    cursor: pointer;
+    border: 0;
 
 }
 
@@ -84,6 +85,7 @@
     margin-left: -12px;
     line-height: 22px;
     cursor: pointer;
+    border: 0;
 
 }
 .demo-button:focus {
