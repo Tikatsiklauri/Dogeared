@@ -1,14 +1,38 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Route } from 'react-router-dom';
+import { Route, withRouter} from 'react-router-dom';
 import BookShowContainer from './book_show_container'; 
 
 class LoggedInBooksIndex extends React.Component {
     constructor(props) {
-        super(props)
+        super(props);
+        this.handleOverview = this.handleOverview.bind(this);
+        this.showBook = this.showBook.bind(this);
     }
     componentDidMount() {
         this.props.fetchBooks();
+    }
+
+
+
+
+ 
+    handleOverview(overview){
+    if(typeof overview === 'undefined'){
+        return
+    }
+       let chars = overview.split('');
+       let overviewSnippet = []
+       let maxWords = 150;
+
+       for (let index = 0; index < maxWords; index++) {
+           overviewSnippet.push(chars[index]);
+       }
+       
+    return overviewSnippet.join('');
+    }
+    showBook(bookId){
+        this.props.history.push(`/books/${bookId}`)
     }
 
     render() {
@@ -25,9 +49,9 @@ class LoggedInBooksIndex extends React.Component {
                 <div className="half-info">
                     <li className="book-title">{book.title}</li>
                     <li className="book-author">{`by ${book.author}`}</li>
-                    <li className="book-description">{book.overview}</li>
+                    <li className="book-description">{this.handleOverview(book.overview)}<span>...</span><span onClick={() => this.showBook(book.id)}> Continue reading</span></li>
 
-                    <div id="gotoShow"><li>...</li><Link className="linkToSHow" to={`/books/${book.id}`}>Continue reading</Link></div>
+                    {/* <div id="gotoShow"><li>...</li><Link className="linkToSHow" to={`/books/${book.id}`}>Continue reading</Link></div> */}
                 </div>
                     
                 </div>
@@ -45,4 +69,4 @@ class LoggedInBooksIndex extends React.Component {
     }
 }
 
-export default LoggedInBooksIndex;
+export default withRouter(LoggedInBooksIndex);
