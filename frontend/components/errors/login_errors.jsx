@@ -8,25 +8,39 @@ class LoginErrors extends React.Component {
         this.state = {
             name: '',
             email: '',
-            password: ''
+            password: '',
+            showLoginPage: false,
         }
         this.handleSubmit = this.handleSubmit.bind(this)
         this.handleClick = this.handleClick.bind(this)
     }
 
-    // componentDidMount() {
-    //     this.props.resetErrors()
-    // }
+    componentWillMount() {
+        const {formType, pushFormType} = this.props;
+        if(formType === 'signup'){
+            this.setState({showLoginPage: true})
+        } else {
+            this.setState({showLoginPage: false});
+        }
+    }
+
+
+    //first we are setting state inside componentdidmount based on formtype
+    //then we are using componentdidupdate to see if there was a state change
+    // inside handle click change the state(hopefuelly this causes rerender without componnodentupdate)
+
     handleClick() {
         this.props.resetErrors();
-        this.props.history.replace("/")
+        const currentState = this.state.showLoginPage;
+        this.setState({showLoginPage: !currentState})
+        // this.props.history.replace("/")
     }
 
     handleSubmit(e) {
-        const {formType} = this.props;
+        const {showLoginPage} = this.state;
         e.preventDefault();
         const user = Object.assign({}, this.state)
-        if(formType === 'login'){
+        if(!showLoginPage){ //the html booleans need to be flipped, they are incorrect. 
             this.props.processForm(user)
         } else {
             this.props.signup(user)
@@ -39,7 +53,8 @@ class LoginErrors extends React.Component {
     }
     render() {
         const { errors, formType } = this.props
-
+        const { showLoginPage } = this.state;
+    
         const showErrors = errors.map((error, idx) => {
             return (
                 <li key={idx}>
@@ -55,7 +70,7 @@ class LoginErrors extends React.Component {
             
                <div className="main-content">
                    <div className="right-error-box">
-                       {formType !== 'login' ? 
+                       {!showLoginPage ? 
                             <div className="directions">Sign up for DogEared
                         <p className="reason-for-signup">
                             Sign up to see what your friends are reading, get book recommendations, 
@@ -73,18 +88,22 @@ class LoginErrors extends React.Component {
                        <div className="or-box">
                        <h2 id="or">or</h2>
                         </div>
-                       {formType !== 'login' ? 
+                       {showLoginPage ? 
                        <div className="email-instead">Sign Up with Email</div>
                        :
                        null
                        }
+                       {errors.length > 0 ?
                        <div className="error-flashmessage-box">
                             <ul className="error-message">{showErrors}</ul>
-                       </div>
+                       </div> 
+                       : 
+                       null
+                        }
                        <div className="login-form-display">
                         <form onSubmit={this.handleSubmit} className="login-box">
 
-                        {formType !== 'login' ? 
+                        {showLoginPage ? 
                             <label className="label">Name
                             <input type="text"
                             value={this.state.name}
@@ -117,14 +136,14 @@ class LoginErrors extends React.Component {
                             </label>
                             <br/>
                             {
-                                formType !== 'login' ?
+                                showLoginPage ?
                                 <input id="signup" type="submit" value="Sign up"/>
 
                                 :
                                 <input id="signup" type="submit" value="Sign in"/>
 
                             }
-                            { formType !== 'login' ?
+                            { showLoginPage ?
                                 <div id="member">Already a member? <div className="link" onClick={this.handleClick}>Sign in</div></div>
                                 :
                                 <div id="member">Not a member? <div className="link" onClick={this.handleClick}>Sign up</div></div>

@@ -26,7 +26,6 @@ class LoginForm extends React.Component {
     }
     changeState(){
         this.props.formType('login')
-
     }
     
     

@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import LoginErrors from './login_errors';
-import {login, signup, resetErrors} from '../../actions/session_actions';
+import {login, signup, resetErrors,receiveFormType} from '../../actions/session_actions';
 
 const msp = (state) => {
    return {
@@ -12,7 +12,8 @@ const msp = (state) => {
 const mdp = dispatch => ({
     processForm: (user) => dispatch(login(user)),
     signup: (user) => dispatch(signup(user)),
-    resetErrors: () => dispatch(resetErrors())
+    resetErrors: () => dispatch(resetErrors()),
+    pushFormType: (formType) => dispatch(receiveFormType(formType))
 
 })
 

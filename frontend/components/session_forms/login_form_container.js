@@ -3,7 +3,6 @@ import { login,receiveFormType } from '../../actions/session_actions';
 import LoginForm from './login_form';
 
 const msp = (state) => {
-    debugger
     return {
     errors: state.errors.session,
     formTypeName: 'Sign in'
