@@ -9,9 +9,9 @@
 }
 .book-synopsis {
     display: flex;
-    border: 1px solid rgb(194, 189, 189);
+    border: 1px solid #c2bdbd;
     background-color: white;
-    width: 60%;
+    width: calc(100vw / 2);
     padding: 20px;
     margin: 20px;
     height: auto;
