@@ -12,7 +12,7 @@ DogEared is built with Ruby on Rails  backend and PostgreSQL database, utilizing
 * Smooth error handling experience for users 
 * Books display with each show page
 
-##Coming Features
+## Coming Features
 * Bookshelves
 ** Users can have bookshelves they can choose to save certain books on
 ** Users can add and design more of their own bookshelves
