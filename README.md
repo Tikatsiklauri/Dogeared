@@ -1,24 +1,22 @@
 # README
+DogEared is a clone of goodreads, social cataloging website that allows users to track their readings, communicate with other readers, and find and discuss the books they dog-ear and love.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+https://dogeared-app.herokuapp.com
 
-Things you may want to cover:
 
-* Ruby version
+## Technologies
+DogEared is built with Ruby on Rails  backend and PostgreSQL database, utilizing React-Redux frontend for a fast and productive single-page user experience.
 
-* System dependencies
+## Key Features
+* Manually implemented User Authorization
+* Smooth error handling experience for users 
+* Books display with each show page
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Coming Features
+* Bookshelves
+** Users can have bookshelves they can choose to save certain books on
+** Users can add and design more of their own bookshelves
+* Reviews
+** Users can read others people's reviews and post their own reviews on books
+* Ratings on books
+* Recommendations generated algorithmically based on user's ratings
