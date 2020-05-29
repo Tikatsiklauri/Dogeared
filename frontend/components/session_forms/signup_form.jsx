@@ -1,5 +1,5 @@
 import React from 'react';
-import { withRouter } from 'react-router-dom';
+import { withRouter, Redirect } from 'react-router-dom';
 
 class SignupForm extends React.Component {
     constructor(props) {
@@ -11,10 +11,10 @@ class SignupForm extends React.Component {
         }
         this.demoUser = {
             name: 'demouser',
-            email: 'demouser',
+            email: 'demo@user',
             password: 'testtest'
         }
-
+        this.changeState = this.changeState.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)
 
     }
@@ -28,19 +28,20 @@ class SignupForm extends React.Component {
         return e => this.setState({ [field]: e.currentTarget.value });
     }
 
+    changeState(){
+        this.props.formType('signup')
+    }
+
 
     render() {
-        // const { errors } = this.props
+        let errors = this.props.errors
+        // debugger
+        if (errors.length > 0) {
+            return <Redirect to='/errors'/>
+        }
 
-        // const showErrors = errors.session.map((error, idx) => {
-        //     return (
-        //         <li key={idx}>
-        //             {error}
-        //         </li>
-        //     )
-        // })
         return (
-            <div className="signup-form-container">
+            <div className="signup-container">
                 <form onSubmit={this.handleSubmit} className="signup-form-box">
                    {/* <ul id="errors">{showErrors}</ul> */}
                     <div className="signup-form">
@@ -53,9 +54,9 @@ class SignupForm extends React.Component {
                             className="signup-input-box"
                         />
                         <br/>
-                        <input type="text"
+                        <input type="email"
                             value={this.state.email}
-                            placeholder="Email adress"
+                            placeholder="Email address"
                             onChange={this.update('email')}
                             className="signup-input-box"
                         />
@@ -65,14 +66,14 @@ class SignupForm extends React.Component {
                             placeholder="Password"
                             onChange={this.update('password')}
                             className="signup-input-box"
+                            autoComplete='off'
                         />
                         <br/>
-                        <input className="signup-button" type="submit" value={this.props.formType} />
+                        <input className="signup-button" type="submit" value={this.props.formTypeName} onClick={this.changeState} />
                     </div>
                 </form>
                 <form id="demo-user">
                     <button className="demo-button" onClick={() => {
-                        // debugger
                         this.props.login(this.demoUser).then(() => this.props.history.push('/navbar'))
                     }} type="submit" value="Demo">Demo</button>
                 </form>

@@ -8,33 +8,33 @@ class Splash extends React.Component {
         super(props)
     }
     render() {
-        const { errors } = this.props
+        // const { errors } = this.props
 
-        const showErrors = errors.map((error, idx) => {
-            return (
-                <li key={idx}>
-                    {error}
-                </li>
-            )
-        })
+        // const showErrors = errors.map((error, idx) => {
+        //     return (
+        //         <li key={idx}>
+        //             {error}
+        //         </li>
+        //     )
+        // })
         return (
-            <div className="allsplash">
-                <div className="books-image">
-                    <header className="header-box">
-                        <div className="logo">Dog<span className="logo-part2">Eared</span></div>
-                        <div className="login-container"><LoginFormContainer /></div>
-                    </header>
+            <div className="main">
+                <div className="allsplash">
+                        <div className="books-image">
+                        <header className="header-box">
+                            <div className="logo">Dog<span className="logo-part2">Eared</span></div>
+                            <div className="login-container"><LoginFormContainer /></div>
+                        </header>
                         <div className="signup-div">
                             <div className="splash-message">
                                 <div className="first-line">Dog ear your next
-                                <p>favorite book</p>
+                                    <p>favorite book</p>
                                 </div>
-                                
                             </div>
-                                <ul className="error-messages">{showErrors}</ul>
-                                <div className='signup-container'><SignupFormContainer /></div>
-                        </div>
-                </div> 
+                            <div className='signup-container'><SignupFormContainer /></div>
+                        </div> 
+                    </div>
+                </div>
                 <div className="text-section">
                     <div className="suggest-texts"><h3>Deciding what to read next?</h3>
                         <p>You’re in the right place. Tell us what titles or genres you’ve 
@@ -47,11 +47,13 @@ class Splash extends React.Component {
                             books on Goodreads.
                         </p>
                     </div>
-                    <div className="books-section">
-                        <BookIndexContainer />
-                    </div>
                 </div> 
-            </div>
+                <div className="books-section">
+                    <h4>Weekly Treats</h4>
+                    <BookIndexContainer />
+                </div>
+           </div>
+            
         )
     }
 }

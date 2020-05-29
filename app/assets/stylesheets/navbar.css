@@ -3,24 +3,34 @@
     width: 100%;
     border: 1px solid rgb(189, 184, 184);
     height: 50px;
-    font: 'Lato', sans-serif;
+    font-family: 'Lato', "Helvetica Neue", Helvetica, sans-serif;
     background-color:  rgba(244,241,234,0.5);
-    justify-content: space-between;
-    flex-wrap: nowrap;
-    display: -webkit-flex;
+    /* justify-content: space-between; */
+    /* flex-wrap: nowrap; */
+    flex-wrap: wrap;
+    position: relative;
+
+    
 }
+
+.main-header-nav ul {
+    margin: 0;
+}   
+
 .small-logo {
     text-decoration: none;
     font-size: 32px;
     padding-right: 5px;
-    margin-top: 10px;
-    margin-right: 5px;
+    margin-top: 5px;
+    margin-left: 100px;
+    margin-right: 50px;
+    padding-right: 5px;
+    padding-left: 5px;
     font-family: 'Lato', "Helvetica Neue", Helvetica, sans-serif;
-    position: relative;
     color: rgb(122, 108, 96);
     font-weight: 100; 
-    margin-left: 90px;
-    display: block;
+    display: flex;
+    cursor: default;
 }
 .small-logo-part2 {
     color: rgb(94, 62, 39);
@@ -32,15 +42,20 @@
 .personal-menu {
     color: rgb(94, 62, 39);
     display: flex;
-    margin-right: 600px;
-    margin-left: -50px;
-   
+    margin-right: 300px;
+    margin-top: 8px;
+    /* position: relative; */
+    text-align: center;
+    /* margin-left: -50px; */
+    
     /* margin-top: 15px; */
+    cursor: pointer;
 }
 
-.personal-menu li {
+.personal-menu ul li {
+    list-style-type: none;
     display: inline-block;
-    
+    height: 100%;
 }
 
 
@@ -60,7 +75,10 @@
 }
 
 .logout {
-       display: inline-block;
+    position: fixed;
+    z-index: 70;
+    /* position: absolute; */
+    display: inline-block;
     font-weight: normal;
     border-radius: 3px;
     border: #382110 1px solid;
@@ -69,12 +87,20 @@
     font-size: 14px;
     font-family: "Lato", "Helvetica Neue", "Helvetica", sans-serif;
     padding: 8px 12px;
-    text-align: center;
     height: 35px;
-    margin-top: 10px;
-    margin-right: 30px;
+    margin-top: 5px;
+    margin-left: 37%;
+    cursor: pointer;
+    position: relative;
+    /* left: 500px; */
+    max-width: 100%;
+    position: absolute;
+    right: 10px;
 }
 
+.logout:focus {
+    outline: none;
+}
 /* .no-display {
     display: none;
 }

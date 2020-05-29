@@ -13,20 +13,19 @@ class BooksIndex extends React.Component {
 
     render() {
         const { books } = this.props;
-        const displayBooks = books.map(book => {
+        const displayBooks = books.map((book) => {
             return (
-                <li className="each-book">
-                    <Link to={`/books/${book.id}`}><img src={book.image_url} /></Link>
+                <li className="each-book"> 
+                    <img src={book.image_url} />
                 </li>
             )
         })
         return (
-            <div className="books">
-                <Route path="/books/:bookId" component={BookShowContainer}/>
+           
                 <ul className="book-list">
                   {displayBooks}  
+                <div className="arrow"></div>
                 </ul>
-            </div>
         )
     }
 }
