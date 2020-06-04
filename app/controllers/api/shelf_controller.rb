@@ -36,6 +36,8 @@ class Api:ShelfController < ApplicationController
     end
 
 
+    private
+    
     def shelf_params
         params.require(:shelf).permit(:name, :user_id)
     end

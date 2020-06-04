@@ -1,4 +1,4 @@
-class Book_On_Shelf < ApplicationRecord
+class BookOnShelf < ApplicationRecord
     validates :book_id, :shelf_id, presence: true
 
     belongs_to :book
