@@ -41,7 +41,11 @@ class Api::BookOnShelfController < ApplicationController
     end
     
     
-    
+    def destroy
+        @shelf = BookOnShelf.find(params[:id])
+        @shelf.destroy
+        render :json {id: @shelf.id, book_id: @shelf.book_id}
+    end
     
     
     
