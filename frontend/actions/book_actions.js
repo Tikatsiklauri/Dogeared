@@ -27,3 +27,23 @@ export const fetchBook = (id) => dispatch => (
     BooksUtil.fetchBook(id)
         .then(book => dispatch(receivebook(book)))
 )
+
+export const fetchBooksOnShelves = (shelfId) => (dispatch) => (
+    BooksUtil.fetchShelfBooks(shelfId)
+        .then(books => dispatch(receiveAllbooks(books)))
+)
+
+export const createBook = (book) => dispatch => (
+    BooksUtil.createBook(book)
+        .then(book => dispatch(receivebook(book)))
+)
+
+export const updateBook = (id) => dispatch => (
+    BooksUtil.updateBook(id)
+        .then(book => dispatch(receivebook(book)))
+)
+
+export const removeBook = (bookId) => dispatch => (
+    BooksUtil.removeBook(bookId)
+        .then(book => dispatch(removeBook(book)))
+)

@@ -12,26 +12,26 @@ export const fetchBookOnShelf = (id) => (
     })
 )
 
-export const createBookOnShelf = (books_on_shelves) => (
+export const createBookOnShelf = (book_on_shelf) => (
     $.ajax({
         method: 'POST',
         url: "/api/books_on_shelves",
-        data: {books_on_shelves}
+        data: {book_on_shelf}
     })
 )
 
-export const updateBookOnShelf = (books_on_shelves) => (
+export const updateBookOnShelf = (book_on_shelf) => (
     $.ajax({
         method: 'PATCH',
         url: `/api/books_on_shelves/${books_on_shelves.id}`,
-        data: { books_on_shelves }
+        data: { book_on_shelf}
     })
 )
 
-export const deleteBookOnShelf = (books_on_shelvesId) => (
+export const deleteBookOnShelf = (book_on_shelfId) => (
     $.ajax({
         method: 'DELETE',
-        url: `/api/books_on_shelves/${books_on_shelvesId}`,
-        data: { books_on_shelvesId }
+        url: `/api/books_on_shelves/${book_on_shelfId}`,
+        data: { book_on_shelfId }
     })
 )
