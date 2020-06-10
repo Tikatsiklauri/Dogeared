@@ -41,7 +41,7 @@ export const updateBookOnShelf = (id) => dispatch => (
         .then(book_on_shelf => dispatch(receiveBookOnShelf(book_on_shelf)))
 )
 
-export const removeBookOnShelf = (book_on_shelfId) => dispatch => (
+export const deleteBookOnShelf = (book_on_shelfId) => dispatch => (
     BooksOnShelvesUtil.deleteBookOnShelf(book_on_shelfId)
         .then(book_on_shelf => dispatch(removeBookOnShelf(book_on_shelf)))
 )
