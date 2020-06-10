@@ -43,7 +43,7 @@ export const updateBook = (id) => dispatch => (
         .then(book => dispatch(receivebook(book)))
 )
 
-export const removeBook = (bookId) => dispatch => (
+export const deleteBook = (bookId) => dispatch => (
     BooksUtil.removeBook(bookId)
         .then(book => dispatch(removeBook(book)))
 )

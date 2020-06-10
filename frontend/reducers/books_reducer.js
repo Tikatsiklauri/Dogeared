@@ -16,13 +16,13 @@ const booksReducer = (state = {}, action) => {
         case RECEIVE_BOOK:
             return Object.assign({}, state, {[action.book.id]: action.book});
         case REMOVE_BOOK:
-            newState = merge({}, state);
+            newState = Object.assign({}, state);
             delete newState[action.bookId];
             return newState;
         case RECEIVE_BOOK_ON_SHELF:
-            return merge({}, state);
+            return Object.assign({}, state);
         case REMOVE_BOOK_ON_SHELF:
-            newState = merge({}, state);
+            newState = Object.assign({}, state);
             delete newState[action.bookId];
             return newState;
         default:

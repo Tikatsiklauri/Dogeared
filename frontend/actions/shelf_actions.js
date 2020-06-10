@@ -40,7 +40,7 @@ export const updateShelf = (id) => dispatch => (
         .then(shelf => dispatch(receiveShelf(shelf)))
 )
 
-export const removeShelf = (shelfId) => dispatch => (
+export const deleteShelf = (shelfId) => dispatch => (
     ShelfUtil.deleteShelf(shelfId)
         .then(shelf => dispatch(removeShelf(shelf)))
 )
