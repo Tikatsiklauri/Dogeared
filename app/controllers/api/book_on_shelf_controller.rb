@@ -12,7 +12,7 @@ class Api::BookOnShelfController < ApplicationController
 
     def create
         @new_shelf = BookOnShelf.new(book_on_shelf_params)
-        @curretn_user = Shelf.find_by(id: :book_on_shelf_params[:shelf_id].user_id)
+        @current_user = Shelf.find_by(id: :book_on_shelf_params[:shelf_id].user_id)
         @shelf_name = Shelf.find_by(:id @new_shelf.shelf_id).name
 
         if @new_shelf.save
