@@ -1,1 +1,5 @@
-json.extract! @shelf, :name, :id, :user_id
+@shelves.each do |shelf|
+    json.set! shelf.id do
+        json.extract! shelf, :id, :user_id, :name
+    end
+end

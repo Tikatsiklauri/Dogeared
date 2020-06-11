@@ -5,6 +5,7 @@ import SplashContainer from './splash/splash_container';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import LoginErrorsContainer from '../components/errors/login_errors_container';
 import BookShowContainer from '../components/books/book_show_container';
+import ShelfIndexContainer from './shelves/shelf_index_container'
 
 
 
@@ -15,6 +16,7 @@ const App = () => (
             <Switch>
             <ProtectedRoute exact path="/navbar" component={NavbarContainer}/>
             <ProtectedRoute path="/books/:bookId" component={BookShowContainer} />
+            <ProtectedRoute className="bookShelves" path="/bookshelves/:userId" component={ShelfIndexContainer} />
             </Switch>
         {/* <Route to="/books/:bookId" component={BookShowContainer} /> */}
     </div>
