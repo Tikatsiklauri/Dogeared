@@ -1,6 +1,7 @@
 class Api::ShelvesController < ApplicationController
     def index 
-        @shelves = Shelf.where(user_id: params[:user_id])
+        
+        @shelves = Shelf.where(user_id: current_user.id)
 
         render :index
     end

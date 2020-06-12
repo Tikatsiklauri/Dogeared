@@ -41,7 +41,6 @@ class LoggedInBooksIndex extends React.Component {
         const displayBooks = books.map(book => {
             return (
                 <div>
-                    <div> < ShelfIndexContainer /> </div>
                 <div className="book-synopsis">
                 <div className="pic-box">
                         <li className="book">

@@ -1,0 +1,38 @@
+#mybooksTitle {
+    color: #00635d;
+    text-decoration: none;
+    font-size: 24px;
+    text-decoration: none;
+    margin-left: 200px;
+}
+
+#shelfTitle {
+    text-decoration: none;
+    font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.bookshelfDiv {
+     margin-left: 200px;
+}
+
+
+.shelfUl:nth-child(2) {
+    color: #777777;
+}
+
+
+.shelfUl:nth-child(3) {
+    color: #00635d;
+}
+.shelfUl:nth-child(4) {
+    color: #00635d;
+}
+.shelfUl:nth-child(5) {
+    color: #00635d;
+}
+.eachShelf:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
