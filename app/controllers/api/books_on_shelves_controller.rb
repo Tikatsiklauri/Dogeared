@@ -1,4 +1,4 @@
-class Api::BookOnShelfController < ApplicationController
+class Api::BooksOnShelvesController < ApplicationController
 
     def index
         @shelves = BookOnShelf.all
