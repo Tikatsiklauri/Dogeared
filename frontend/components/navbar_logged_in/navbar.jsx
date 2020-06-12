@@ -1,7 +1,8 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, withRouter} from 'react-router-dom';
 import BookShowContainer from '../books/book_show_container';
 import LoggedInBooksIndexContainer from '../books/loggedin_book_index_container';
+import ShelfIndexContainer from "../shelves/shelf_index_container";
 
 class Navbar extends React.Component {
     constructor(props) {
@@ -10,9 +11,9 @@ class Navbar extends React.Component {
         //     dropdown: false
         // }
         // this.handleDropdown = this.toggleDropdown.bind(this)
-      
     }
 
+ 
     // componentDidMount() {
     //     this.props.fetchBooks();
     // }
@@ -34,24 +35,39 @@ class Navbar extends React.Component {
         //     )
         // })
         return (
-            <div>
-                <nav className="main-header-nav">
-                 <div className="small-logo">Dog<span className="small-logo-part2">Eared</span></div>
-                    <ul className="personal-menu">
-                        <li className="clickable" role="button" aria-haspopup="true">Home</li>
-                        <li className="clickable" role="button" aria-haspopup="true">My Books</li>
-                        <li className="clickable" role="button" aria-haspopup="true">Browse</li>
-                        
-                    </ul>
-                       
-                    <button className="logout" onClick={this.props.logout}>Sign out</button>
-                   
-                </nav>
+          <div>
+            <nav className="main-header-nav">
+              <Link id="smallLogoLink" to={'/navbar'}>
+                <div className="small-logo">
+                  Dog<span className="small-logo-part2">Eared</span>
+                </div>
+              </Link>
+              <ul className="personal-menu">
+                <li className="clickable" role="button" aria-haspopup="true">
+                  Home
+                </li>
+                <Link
+                  id="mybooksLink"
+                  to={`/shelves/${this.props.currentUser.id}`}
+                >
+                  <li className="clickable" role="button" aria-haspopup="true">
+                    My Books
+                  </li>
+                </Link>
+                <li className="clickable" role="button" aria-haspopup="true">
+                  Browse
+                </li>
+              </ul>
+
+              <button className="logout" onClick={this.props.logout}>
+                Sign out
+              </button>
+            </nav>
             <div className="books-container">
               <LoggedInBooksIndexContainer />
             </div>
-        </div>
-        )
+          </div>
+        );
     }
 }
 

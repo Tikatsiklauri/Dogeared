@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Route, withRouter} from 'react-router-dom';
 import BookShowContainer from './book_show_container'; 
+import ShelfIndexContainer from '../shelves/shelf_index_container';
 
 class LoggedInBooksIndex extends React.Component {
     constructor(props) {

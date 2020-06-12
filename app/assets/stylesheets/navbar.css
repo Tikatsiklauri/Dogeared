@@ -30,7 +30,8 @@
     color: rgb(122, 108, 96);
     font-weight: 100; 
     display: flex;
-    cursor: default;
+    cursor: pointer;
+   
 }
 .small-logo-part2 {
     color: rgb(94, 62, 39);
@@ -73,7 +74,20 @@
     border: 20px;
    
 }
+#mybooksLink {
+    text-decoration: none;
+    color: rgb(94, 62, 39);
+}
 
+#homeButtonLink {
+      text-decoration: none;
+    color: rgb(94, 62, 39);
+}
+
+#smallLogoLink {
+    text-decoration: none;
+    cursor: pointer;
+}
 .logout {
     position: fixed;
     z-index: 70;

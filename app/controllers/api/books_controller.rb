@@ -20,7 +20,7 @@ class Api::BooksController < ApplicationController
     end
 
     def destroy
-        @book = Book.fins(params[:id])
+        @book = Book.find(params[:id])
         @book.destroy
         render "api/shelves/show"
     end
