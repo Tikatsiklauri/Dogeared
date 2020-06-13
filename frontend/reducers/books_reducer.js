@@ -3,10 +3,7 @@ import {
     RECEIVE_BOOK,
     REMOVE_BOOK 
 } from '../actions/book_actions';
-import {
-    RECEIVE_BOOK_ON_SHELF,
-    REMOVE_BOOK_ON_SHELF
-} from '../actions/books_on_shelves_actions';
+
 
 const booksReducer = (state = {}, action) => {
     Object.freeze(state)
@@ -16,12 +13,6 @@ const booksReducer = (state = {}, action) => {
         case RECEIVE_BOOK:
             return Object.assign({}, state, {[action.book.id]: action.book});
         case REMOVE_BOOK:
-            newState = Object.assign({}, state);
-            delete newState[action.bookId];
-            return newState;
-        case RECEIVE_BOOK_ON_SHELF:
-            return Object.assign({}, state);
-        case REMOVE_BOOK_ON_SHELF:
             newState = Object.assign({}, state);
             delete newState[action.bookId];
             return newState;
