@@ -5,7 +5,7 @@ Rails.application.routes.draw do
     resource :session, only: [:create, :destroy]
     resources :books, only: [:index, :show]
     resources :shelves, only: [:index, :show, :create, :destroy, :update]
-    resources :books_on_shelves, only: [:index, :show, :create, :destroy]
+    post '/shelving_book', to: 'shelves#shelving_book'
   end
   
   root to: 'static_pages#root'

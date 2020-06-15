@@ -19,7 +19,7 @@ class Api::ShelvesController < ApplicationController
         end
     end
     
-    def destory
+    def destroy
         @shelf = Shelf.find(params[:id])
            if @shelf.name != "All" &&
             @shelf.name != "Read" &&
@@ -30,6 +30,10 @@ class Api::ShelvesController < ApplicationController
         end
     end
 
+    def shelving_book
+        debugger
+        @shelved_book = Book.find_by(id: params[:book_id])
+    end
 
     private
     
