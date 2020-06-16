@@ -4,7 +4,7 @@ Rails.application.routes.draw do
     resources :users, only: [:create]
     resource :session, only: [:create, :destroy]
     resources :books, only: [:index, :show]
-    resources :shelves, only: [:index, :show, :create, :destroy, :update]
+    resources :shelves, only: [:index, :show, :create, :destroy]
     post '/shelving_book', to: 'shelves#shelving_book'
   end
   
