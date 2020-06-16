@@ -35,11 +35,6 @@ export const createShelf = (shelf) => dispatch => (
         .then(shelf => dispatch(receiveShelf(shelf)))
 )
 
-export const updateShelf = (id) => dispatch => (
-    ShelfUtil.updateShelf(id)
-        .then(shelf => dispatch(receiveShelf(shelf)))
-)
-
 export const deleteShelf = (shelfId) => dispatch => (
     ShelfUtil.deleteShelf(shelfId)
         .then(shelf => dispatch(removeShelf(shelf)))

@@ -30,10 +30,6 @@ class Api::ShelvesController < ApplicationController
         end
     end
 
-    def shelving_book
-        @shelved_book = Book.find_by(id: params[:book_id])
-    end
-
     private
     
     def shelf_params
