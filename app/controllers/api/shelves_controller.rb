@@ -31,7 +31,6 @@ class Api::ShelvesController < ApplicationController
     end
 
     def shelving_book
-        debugger
         @shelved_book = Book.find_by(id: params[:book_id])
     end
 
