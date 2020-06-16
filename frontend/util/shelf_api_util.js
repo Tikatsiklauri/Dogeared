@@ -20,13 +20,6 @@ export const createShelf = (shelf) => (
     })
 )
 
-export const updateShelf = (shelf) => (
-    $.ajax({
-        method: 'PATCH',
-        url: `/api/shelves/${shelf.id}`,
-        data: {shelf}
-    })
-)
 
 export const deleteShelf = (shelfId) => (
     $.ajax({
