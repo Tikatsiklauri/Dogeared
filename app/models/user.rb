@@ -25,6 +25,20 @@ class User < ApplicationRecord
         self.shelves.limit(4)
     end
 
+    def default_books
+        self.shelves.includes(:shelvings).limit(4).map{|shelf| shelf.shelvings}
+    end
+
+    def default_shelvings
+        shelf_shelvings =  self.shelves.includes(:shelvings).limit(4).map {|shelf| shelf.shelvings}
+        shelf_shelvings.flatten
+    end
+
+    def default_shelving(book_id)
+        shelved = default_shelvings.select{ |shelving| shelving.book_id == book_id}[0]
+        shelved ? shelved : false
+    end
+
      def self.find_by_credentials(email, password)
         user = User.find_by(email: email)
         return nil unless user && user.is_password?(password)
@@ -54,6 +68,7 @@ class User < ApplicationRecord
         self.session_token
     end
 
+    private
     def build_shelves
             @all_shelves = Shelf.create!({user_id: self.id, name: "All"})
             @read_shelf = Shelf.create!({user_id: self.id, name: "Read"})
