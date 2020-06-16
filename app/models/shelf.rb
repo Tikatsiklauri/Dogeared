@@ -1,11 +1,15 @@
 class Shelf < ApplicationRecord
-    validates :name, presence: true
+    validates :user_id, :name, presence: true
 
-    belongs_to :user,
-    foreign_key: :user_id,
-    class_name: :User
+    belongs_to :user
+ 
+    has_many :shelvings,
+    foreign_key: :shelf_id,
+    class_name: Shelving,
+    dependent: :destroy
 
     has_many :books,
-    foreign_key: :shelf_id,
-    class_name: :Book
+    through: :shelvings,
+    source: :book
+
 end

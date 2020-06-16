@@ -4,11 +4,26 @@ class User < ApplicationRecord
     validates :name, presence: true
     validates :password, length: {minimum: 6, allow_nil: true}
     after_initialize :ensure_session_token
+    after_create :build_shelves
     attr_reader :password
+    attr_accessor :all_shelves, :read_shelf, :reading_shelf, :want_read_shelf
 
     has_many :shelves,
     foreign_key: :user_id,
-    class_name: :Shelf
+    class_name: :Shelf,
+    dependent: :destroy
+
+    has_many :shelvings,
+    through: :shelves,
+    source: :shelvings
+
+    has_many :books,
+    through: :shelves,
+    source: :book
+
+    def default_shelves
+        self.shelves.limit(4)
+    end
 
      def self.find_by_credentials(email, password)
         user = User.find_by(email: email)
@@ -39,5 +54,10 @@ class User < ApplicationRecord
         self.session_token
     end
 
-
+    def build_shelves
+            @all_shelves = Shelf.create!({user_id: self.id, name: "All"})
+            @read_shelf = Shelf.create!({user_id: self.id, name: "Read"})
+            @reading_shelf = Shelf.create!({user_id: self.id, name: "Currently Reading"})
+            @want_read_shelf = Shelf.create!({user_id: self.id, name: "Want to Read"})
+    end
 end
