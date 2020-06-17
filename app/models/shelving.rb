@@ -1,4 +1,7 @@
 class Shelving < ApplicationRecord
+    validates :shelf, :book, presence: true
+    validates_uniqueness_of :book_id, scope: :shelf_id
+
     belongs_to :shelf,
     foreign_key: :shelf_id,
     class_name: Shelf
@@ -7,7 +10,4 @@ class Shelving < ApplicationRecord
     foreign_key: :book_id,
     class_name: Book
 
-    has_one :user
-    through :shelf
-    source: :user
 end
