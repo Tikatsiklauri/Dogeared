@@ -4,9 +4,10 @@ class Book < ApplicationRecord
 
     has_many :shelvings,
     foreign_key: :book_id,
-    class_name: :Shelving,
-    dependent: :destroy
+    class_name: :Shelving
+  
 
     has_many :shelves,
-    through: :shelvings 
+    through: :shelvings,
+    source: :shelf
 end
