@@ -1,11 +1,7 @@
 class Api::UsersController < ApplicationController 
     def show
-        @user = User.includes(:shelves, :books).find(params[:id])
-        if @user
-            render '/api/users/shelves'
-        else
-            render json: @user.errors.full_messages, status: 422
-        end
+        @user = User.find(params[:id])
+       
     end
 
     def create
@@ -14,7 +10,7 @@ class Api::UsersController < ApplicationController
         if @user.save
             login!(@user)
         
-            render 'api/users/show'
+            render :show
         else
             render json: @user.errors.full_messages, status: 422
         end

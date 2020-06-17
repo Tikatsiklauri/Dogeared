@@ -5,7 +5,5 @@ json.books do
     rescue
         json.image_url @book.image_url
     end
-     json.shelves @book.shelves.each do |shelf|
-            json.extract! shelf, :name, :user_id 
-    end
+   
 end
