@@ -1,5 +1,9 @@
-json.extract! shelf: :id, :name, :user_id
+json.extract! shelf, :id, :name, :user_id
 
-json.books do
-    json.array! shelf.books, partial: "api/books/book", as: :book
+books_ids = []
+shelf.books.each do |book|
+    books_ids << book.id
 end
+json.books_ids books_ids
+
+            

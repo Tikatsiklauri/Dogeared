@@ -40,7 +40,7 @@ class LoggedInBooksIndex extends React.Component {
         const { books } = this.props;
         const displayBooks = books.map(book => {
             return (
-                <div>
+                <div key={book.id}>
                 <div className="book-synopsis">
                 <div className="pic-box">
                         <li className="book">

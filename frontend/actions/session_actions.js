@@ -6,9 +6,10 @@ export const RECEIVE_SESSION_ERRORS = 'RECEIVE_SESSION_ERRORS';
 export const RESET_ERRORS = 'RESET_ERRORS';
 export const RECEIVE_FORM_TYPE = 'RECEIVE_FORM_TYPE'
 
-export const receiveCurrentUser = currentUser => ({
+export const receiveCurrentUser = ({user, shelves}) => ({
     type: RECEIVE_CURRENT_USER,
-    currentUser
+    currentUser: user,
+    shelves
 });
 
 export const logoutCurrentUser = () => ({
