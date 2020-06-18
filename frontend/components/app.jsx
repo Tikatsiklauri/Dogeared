@@ -16,6 +16,7 @@ const App = () => (
             <Switch>
             <ProtectedRoute exact path="/navbar" component={NavbarContainer}/>
             <ProtectedRoute path="/books/:bookId" component={BookShowContainer} />
+            <ProtectedRoute className="shelves" path="/shelves/:userId/:shelfId" component={ShelfIndexContainer} />
             <ProtectedRoute className="shelves" path="/shelves/:userId" component={ShelfIndexContainer} />
             </Switch>
         {/* <Route to="/books/:bookId" component={BookShowContainer} /> */}

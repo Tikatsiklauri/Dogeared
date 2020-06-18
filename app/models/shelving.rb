@@ -1,6 +1,6 @@
 class Shelving < ApplicationRecord
-    validates :shelf, :book, presence: true
-    validates_uniqueness_of :book_id, scope: :shelf_id
+    validates :shelf_id, :book_id, presence: true
+    validates :book_id, uniqueness: {scope: :shelf_id}
 
     belongs_to :shelf,
     foreign_key: :shelf_id,

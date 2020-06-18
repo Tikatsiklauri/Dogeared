@@ -12,11 +12,11 @@ export const fetchShelving = (id) => (
     })
 )
 
-export const createShelving = (shelving) => (
+export const createShelving = (book_id, shelf_id, all_id) => (
     $.ajax({
         method: 'post',
         url: "/api/shelvings",
-        data: { shelving }
+        data: { shelving: {book_id, shelf_id, all_id} }
     })
 )
 

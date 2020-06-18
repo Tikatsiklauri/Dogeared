@@ -1,7 +1,9 @@
 class Api::ShelvingsController < ApplicationController
-    def create
-        @shelving = Shelving.new(shelving_params)
+  skip_before_action :verify_authenticity_token  
+  def create
+      @shelving = Shelving.new(shelving_params)
         if @shelving.save
+          cody = Shelving.create(shelf_id: params[:shelving][:all_id], book_id: params[:shelving][:book_id])
           @shelf = @shelving.shelf
           render '/api/shelves/show'
         else
@@ -19,5 +21,9 @@ class Api::ShelvingsController < ApplicationController
     private
     def shelving_params
         params.require(:shelving).permit(:book_id, :shelf_id)
+    end
+
+    def all_shelf_params
+      params.require(:shelving).permit(:book_id, :all_id)
     end
 end
