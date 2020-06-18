@@ -43,6 +43,7 @@ class LoggedInBooksIndex extends React.Component {
                 <div className="pic-box">
                         <li className="book">
                             <Link to={`/books/${book.id}`}><img src={book.image_url}/></Link>
+                        <div> <BookShelfListContainer book_id={book.id} /></div>
                         </li>
                 </div>
                 <div className="half-info">
@@ -52,8 +53,8 @@ class LoggedInBooksIndex extends React.Component {
 
                 </div>
                     
+                    
                 </div>
-                <BookShelfListContainer book_id={book.id}  />
                 </div>
             )
         })

@@ -54,9 +54,9 @@ class Navbar extends React.Component {
                     My Books
                   </li>
                 </Link>
-                <li className="clickable" role="button" aria-haspopup="true">
+                {/* <li className="clickable" role="button" aria-haspopup="true">
                   Browse
-                </li>
+                </li> */}
               </ul>
 
               <button className="logout" onClick={this.props.logout}>

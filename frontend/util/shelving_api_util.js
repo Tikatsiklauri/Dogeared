@@ -15,7 +15,7 @@ export const fetchShelving = (id) => (
 export const createShelving = (shelving) => (
     $.ajax({
         method: 'post',
-        url: `/api/shelvings`,
+        url: "/api/shelvings",
         data: { shelving }
     })
 )
