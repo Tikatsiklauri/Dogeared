@@ -8,6 +8,10 @@ class Api::UsersController < ApplicationController
         @user = User.new(user_params)
       
         if @user.save
+            @all_shelves = Shelf.create!({user_id: @user.id, name: "All"})
+            @read_shelf = Shelf.create!({user_id: @user.id, name: "Read"})
+            @reading_shelf = Shelf.create!({user_id: @user.id, name: "Currently Reading"})
+            @want_read_shelf = Shelf.create!({user_id: @user.id, name: "Want to Read"})
             login!(@user)
         
             render :show

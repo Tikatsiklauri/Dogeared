@@ -1,7 +1,7 @@
 class Api::ShelvesController < ApplicationController
 
     def index 
-        @shelves = User.find(params[:user_id]).shelves
+        @shelves = User.find(current_user.id).shelves
     end
 
     def show

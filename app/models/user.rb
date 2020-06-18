@@ -6,8 +6,6 @@ class User < ApplicationRecord
     
     after_initialize :ensure_session_token
     
-    after_create :build_shelves
-    
     attr_reader :password
 
     has_many :shelves,
@@ -18,13 +16,7 @@ class User < ApplicationRecord
     through: :shelves,
     source: :books
 
-    
-    def build_shelves
-            @all_shelves = Shelf.create!({user_id: self.id, name: "All"})
-            @read_shelf = Shelf.create!({user_id: self.id, name: "Read"})
-            @reading_shelf = Shelf.create!({user_id: self.id, name: "Currently Reading"})
-            @want_read_shelf = Shelf.create!({user_id: self.id, name: "Want to Read"})
-    end
+   
 
     def self.find_by_credentials(email, password)
         user = User.find_by(email: email)

@@ -5,7 +5,7 @@ class Shelf < ApplicationRecord
  
     has_many :shelvings,
     foreign_key: :shelf_id,
-    class_name: Shelving
+    class_name: :Shelving
 
     has_many :books,
     through: :shelvings,

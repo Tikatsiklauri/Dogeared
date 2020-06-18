@@ -4,10 +4,10 @@ class Shelving < ApplicationRecord
 
     belongs_to :shelf,
     foreign_key: :shelf_id,
-    class_name: Shelf
+    class_name: :Shelf
 
     belongs_to :book,
     foreign_key: :book_id,
-    class_name: Book
+    class_name: :Book
 
 end
