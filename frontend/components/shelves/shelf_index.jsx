@@ -9,12 +9,13 @@ class ShelfIndex extends React.Component {
 
     componentDidMount() {
         this.props.fetchShelves();
+        this.props.fetchBooks()
     }
     render () {
         let bookshelves = Object.values(this.props.shelves).map(shelf => {
         return (
             <ul className="shelfUl" key={shelf.id}>
-              <Link to={`/shelves/${this.props.userId}/${shelf.id}`}> <li className="eachShelf">{shelf.name} ({shelf.books_ids ? shelf.books_ids.length : '0'})</li> </Link> 
+            <Link className="linkLi" to={`/shelves/${this.props.userId}/${shelf.id}`}><li className = "eachShelf" >{shelf.name} ({shelf.books_ids ? shelf.books_ids.length : '0'})</li></Link> 
             </ul>
 
         );

@@ -1,0 +1,19 @@
+.shelfShowBookContainer {
+    width: 40%;
+    /* align-items: center; */
+    margin-left: 500px;
+    margin-top: -70px;
+}
+
+.bookOnShelf {
+    width: 70%;
+   
+}
+
+/* .bookOnShelfUl {
+     display: inline-block;
+} */
+.shelfBookImage {
+    height: 100px;
+    width: auto;
+}
