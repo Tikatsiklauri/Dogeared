@@ -5,7 +5,6 @@ import { logout } from "../../actions/session_actions";
 
 
 const msp = (state, ownProps) => {
-  debugger
     return {
         userId: state.session.id,
         shelves: state.entities.shelves

@@ -13,7 +13,7 @@ const msp = (state) => {
 const mdp = dispatch => ({
     fetchShelves: () => dispatch(fetchShelves()),
     fetchShelf: (id) => dispatch(fetchShelf(id)),
-    createShelving: (id) => dispatch(createShelving(id))
+    createShelving: (book_id, shelf_id, all_id) => dispatch(createShelving(book_id, shelf_id, all_id))
 })
 
 export default connect(msp, mdp)(BookShelfList);

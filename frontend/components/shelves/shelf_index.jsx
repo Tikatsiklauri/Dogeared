@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
+import ShelfShowContainer from './shelf_show_container';
 
 class ShelfIndex extends React.Component {
     constructor(props) {
@@ -14,8 +14,9 @@ class ShelfIndex extends React.Component {
         let bookshelves = Object.values(this.props.shelves).map(shelf => {
         return (
             <ul className="shelfUl" key={shelf.id}>
-              <li className="eachShelf">{shelf.name}</li>
+              <Link to={`/shelves/${this.props.userId}/${shelf.id}`}> <li className="eachShelf">{shelf.name} ({shelf.books_ids ? shelf.books_ids.length : '0'})</li> </Link> 
             </ul>
+
         );
         })
         return (
@@ -50,6 +51,7 @@ class ShelfIndex extends React.Component {
               <h1 id="shelfTitle">Bookshelves</h1>
               {bookshelves}
             </div>
+            <ShelfShowContainer/>
           </div>
         );
     }

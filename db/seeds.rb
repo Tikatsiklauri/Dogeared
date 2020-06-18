@@ -7,18 +7,19 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 User.destroy_all
 Book.destroy_all
-
-testUser=User.create({
-    name: 'test',
-    email: 't@est',
-    password: 'password'
-})
+Shelf.destroy_all
+Shelving.destroy_all
 
 demoUser=User.create({
     name: 'demouser',
     email: 'demo@user',
     password: 'testtest'
 })
+
+all_shelves = Shelf.create!({user_id: demoUser.id, name: "All"})
+read_shelf = Shelf.create!({user_id: demoUser.id, name: "Read"})
+reading_shelf = Shelf.create!({user_id: demoUser.id, name: "Currently Reading"})
+want_read_shelf = Shelf.create!({user_id: demoUser.id, name: "Want to Read"})
 
 book1 = Book.create!({
     title: "Memoirs of a Geisha",

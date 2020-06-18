@@ -52,9 +52,9 @@ export const requestShelving = (id) => (dispatch) => {
     );
 };
 
-export const createShelving = (shelving) => (dispatch) => {
+export const createShelving = (book_id, shelf_id, all_id) => (dispatch) => {
 
-    return ShelvingUtil.createShelving(shelving).then((shelving) => {
+    return ShelvingUtil.createShelving(book_id, shelf_id, all_id).then((shelving) => {
 
         dispatch(receiveShelving(shelving))
     }

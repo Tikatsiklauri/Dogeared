@@ -13,21 +13,18 @@ class BookShelfList extends React.Component {
        
     }
 
-   addBooktoShelf() {
-       debugger
-       this.props.shelves.map(shelf => {
-    //    this.props.createShelving({ book_id: this.props.book_id, shelf_id: shelf.id });
-
-       this.props.createShelving({ book_id: this.props.book_id, shelf_id: shelf.id }); 
-       })
+   addBooktoShelf(shelf_id) {
+      
+       this.props.createShelving( this.props.book_id, shelf_id, this.props.shelves[0].id ); 
+    
    }
 
    render() {
     //    debugger
        const {shelves} = this.props;
-       let eachShelf = shelves.map((shelf) => {
+       let eachShelf = shelves.slice(1).map((shelf) => {
            return (
-               <li className="shelfButtonItem" onClick={this.addBooktoShelf}>
+               <li className="shelfButtonItem" onClick={() => this.addBooktoShelf(shelf.id)}>
                    {shelf.name}
                </li>
            )
