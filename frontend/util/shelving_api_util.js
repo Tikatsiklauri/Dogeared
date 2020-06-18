@@ -1,21 +1,21 @@
 export const fetchShelvings = () => (
  $.ajax({
     method: 'get',
-    url: `/api/shelving/`
+    url: `/api/shelvings/`
 })
 )
 
 export const fetchShelving = (id) => (
  $.ajax({
         method: 'get',
-        url: `/api/shelving/${id}`
+        url: `/api/shelvings/${id}`
     })
 )
 
 export const createShelving = (shelving) => (
     $.ajax({
         method: 'post',
-        url: `/api/shelving`,
+        url: `/api/shelvings`,
         data: { shelving }
     })
 )
@@ -23,7 +23,7 @@ export const createShelving = (shelving) => (
 export const updateShelving = (shelving) => (
      $.ajax({
         method: 'patch',
-        url: `/api/shelving/${shelving.id}`,
+        url: `/api/shelvings/${shelving.id}`,
         data: { shelving }
     })
 )
@@ -31,7 +31,7 @@ export const updateShelving = (shelving) => (
 export const removeShelving = (shelvingId) => (
    $.ajax({
         method: 'delete',
-        url: `api/shelving/${shelvingId}`,
+        url: `api/shelvings/${shelvingId}`,
         data: { shelvingId }
     })
 )

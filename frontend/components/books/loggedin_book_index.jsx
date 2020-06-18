@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { Route, withRouter} from 'react-router-dom';
 import BookShowContainer from './book_show_container'; 
 import ShelfIndexContainer from '../shelves/shelf_index_container';
+import BookShelfListContainer from './book_shelf_list_container';
 
 class LoggedInBooksIndex extends React.Component {
     constructor(props) {
@@ -13,9 +14,6 @@ class LoggedInBooksIndex extends React.Component {
     componentDidMount() {
         this.props.fetchBooks();
     }
-
-
-
 
  
     handleOverview(overview){
@@ -55,6 +53,7 @@ class LoggedInBooksIndex extends React.Component {
                 </div>
                     
                 </div>
+                <BookShelfListContainer book_id={book.id}  />
                 </div>
             )
         })

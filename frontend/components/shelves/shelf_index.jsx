@@ -13,7 +13,7 @@ class ShelfIndex extends React.Component {
     render () {
         let bookshelves = Object.values(this.props.shelves).map(shelf => {
         return (
-            <ul className="shelfUl">
+            <ul className="shelfUl" key={shelf.id}>
               <li className="eachShelf">{shelf.name}</li>
             </ul>
         );
