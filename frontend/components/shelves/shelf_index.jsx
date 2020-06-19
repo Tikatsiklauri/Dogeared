@@ -5,13 +5,54 @@ import ShelfShowContainer from './shelf_show_container';
 class ShelfIndex extends React.Component {
     constructor(props) {
         super(props)
+      this.state = {
+        addShelf: false,
+        name: "",
+        user_id: null
+      }
+      this.update = this.update.bind(this);
+      this.handleSubmit = this.handleSubmit.bind(this);
+      this.addShelf = this.addShelf.bind(this);
     }
 
     componentDidMount() {
         this.props.fetchShelves();
         this.props.fetchBooks()
     }
+    handleSubmit(e) {
+        e.preventDefault();
+        this.props.createShelf({ name: this.state.name, user_id: this.props.userId });
+        this.setState({ addShelf: false, name: "" })
+    }
+    update(name) {
+      return e => this.setState({
+      [name]: e.target.value
+    });
+  }
+
+  addShelf() {
+    debugger
+    this.setState({ addShelf: true, user_id: this.props.userId })
+  }
+
+
+  AddShelfInput() {
+    if (this.state.addShelf === true) {
+      return (
+        <form onSubmit={this.handleSubmit}>
+          <span className="addShelfText">Add a Shelf:</span>
+          <input type="text" className="addShelfInput" id="add-shelf-input" value={this.state.name} onChange={this.update('name')}></input>
+          <input type="submit" className="addBookButton" value="add"></input>
+        </form>)
+    } else {
+      return (
+        <button className="bookShelves-button" onClick={this.addShelf}>Add shelf:</button>
+      )
+    }
+  }
     render () {
+   
+    
         let bookshelves = Object.values(this.props.shelves).map(shelf => {
         return (
             <ul className="shelfUl" key={shelf.id}>
@@ -20,6 +61,20 @@ class ShelfIndex extends React.Component {
 
         );
         })
+    //  debugger
+    //   let allShelfBooks = bookshelves !== undefined ? bookshelves[0].books.map(book_id => {
+    //     let book = this.props.books[book_id]
+    //     return (<ul className="bookOnShelfUl">
+    //       <li className="bookOnShelf" key={book_id}>
+    //         <img className="shelfBookImage" src={book.image_url} />
+    //       </li>
+    //       <li>
+    //         {book.title}
+    //       </li>
+    //     </ul>)
+    //   })
+    //   :
+    //   null;
         return (
           <div>
             <nav className="main-header-nav">
@@ -38,9 +93,9 @@ class ShelfIndex extends React.Component {
                 <li className="clickable" role="button" aria-haspopup="true">
                   My Books
                 </li>
-                <li className="clickable" role="button" aria-haspopup="true">
+                {/* <li className="clickable" role="button" aria-haspopup="true">
                   Browse
-                </li>
+                </li> */}
               </ul>
 
               <button className="logout" onClick={this.props.logout}>
@@ -51,9 +106,13 @@ class ShelfIndex extends React.Component {
             <div className="bookshelfDiv">
               <h1 id="shelfTitle">Bookshelves</h1>
               {bookshelves}
+              {this.AddShelfInput()}
+              {/* {allShelfBooks} */}
             </div>
             <ShelfShowContainer/>
+
           </div>
+          
         );
     }
 }

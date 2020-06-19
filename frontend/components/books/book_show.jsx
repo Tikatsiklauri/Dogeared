@@ -10,6 +10,7 @@ class BookShow extends React.Component {
         super(props)
         // this.handleClick = this.handleClick.bind(this);
         this.handleClick = this.handleClick.bind(this)
+        this.handleMyBooksClick = this.handleMyBooksClick.bind(this)
     }
     componentDidMount() {
         this.props.fetchBook(this.props.match.params.bookId)
@@ -22,6 +23,10 @@ class BookShow extends React.Component {
         this.props.history.push('/navbar')
     }
 
+    handleMyBooksClick() {
+        this.props.history.push('/shelves/:userId/:shelfId')
+    }
+
     render() {
         const { book } = this.props;
         // debugger
@@ -31,8 +36,8 @@ class BookShow extends React.Component {
                     <div className="small-logo">Dog<span className="small-logo-part2">Eared</span></div>
                     <ul className="personal-menu">
                         <li className="clickable" role="button" aria-haspopup="true" onClick={this.handleClick}>Home</li>
-                        <li className="clickable" role="button" aria-haspopup="true">My Books</li>
-                        <li className="clickable" role="button" aria-haspopup="true">Browse</li>
+                        <li className="clickable" role="button" aria-haspopup="true" onClick={this.handleMyBooksClick}>My Books</li>
+                        {/* <li className="clickable" role="button" aria-haspopup="true">Browse</li> */}
                     </ul>
                     <button className="logout" onClick={this.props.logout}>Sign out</button>
                 </nav>

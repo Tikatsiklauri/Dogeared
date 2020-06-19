@@ -8,7 +8,8 @@ import { logout } from "../../actions/session_actions";
 const msp = (state, ownProps) => {
     return {
         userId: state.session.id,
-        shelves: state.entities.shelves
+        shelves: state.entities.shelves,
+        books: state.entities.books
     }
 }
 

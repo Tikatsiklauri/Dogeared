@@ -2,18 +2,29 @@
     width: 40%;
     /* align-items: center; */
     margin-left: 500px;
-    margin-top: -70px;
+    margin-top: -145px;
 }
 
 .bookOnShelf {
-    width: 70%;
-   
+    width: 100%;
+   padding: 10px;
+   border-bottom: 1px solid #ebe8d5;
 }
 
 /* .bookOnShelfUl {
      display: inline-block;
 } */
 .shelfBookImage {
-    height: 100px;
+    height: 150px;
     width: auto;
+    padding-bottom: 30px;
+}
+
+.bookTitle {
+    margin-left: 11px;
+   margin-top: 10px;
+   color: black;
+}
+a  {
+text-decoration: none;
 }
