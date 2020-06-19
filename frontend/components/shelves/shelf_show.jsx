@@ -1,13 +1,15 @@
-import React from 'react'
-
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 class ShelfShow extends React.Component {
     constructor(props) {
         super(props)
     }
     render() {
-        if (!this.props.shelf) return (<div>oh no</div>);
+        if (!this.props.shelf) return (<div></div>);
         return(
+        <div>
+            
             <div className="shelfShowBookContainer">
                 <ul className="bookList">
                     {this.props.shelf.books_ids.map(book_id => {
@@ -15,12 +17,15 @@ class ShelfShow extends React.Component {
                         if (book){
                         return(
                             <ul className="bookOnShelfUl">
-                                 <li className="bookOnShelf" key={book_id}>
-                                    <img className="shelfBookImage" src={book.image_url}/>
-                                </li>  
-                                <li>
+                                <Link to={`/books/${book.id}`}><li className="bookTitle">
                                     {book.title}
                                 </li>  
+                                </Link> 
+                                <Link to={`/books/${book.id}`}><li className="bookOnShelf" key={book_id}>
+                                    <img className="shelfBookImage" src={book.image_url}/>
+                                </li>  
+                                </Link> 
+                               
                             </ul>
                         )
                         } else {
@@ -29,6 +34,7 @@ class ShelfShow extends React.Component {
                     })}
                 </ul>
             </div>
+         </div>
         )
     }
 
