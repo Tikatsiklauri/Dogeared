@@ -62,19 +62,19 @@ class ShelfIndex extends React.Component {
         );
         })
     //  debugger
-    //   let allShelfBooks = bookshelves !== undefined ? bookshelves[0].books.map(book_id => {
-    //     let book = this.props.books[book_id]
-    //     return (<ul className="bookOnShelfUl">
-    //       <li className="bookOnShelf" key={book_id}>
-    //         <img className="shelfBookImage" src={book.image_url} />
-    //       </li>
-    //       <li>
-    //         {book.title}
-    //       </li>
-    //     </ul>)
-    //   })
-    //   :
-    //   null;
+      let allShelfBooks = bookshelves !== undefined ? bookshelves[0].books.map(book_id => {
+        let book = this.props.books[book_id]
+        return (<ul className="bookOnShelfUl">
+          <li className="bookOnShelf" key={book_id}>
+            <img className="shelfBookImage" src={book.image_url} />
+          </li>
+          <li>
+            {book.title}
+          </li>
+        </ul>)
+      })
+      :
+      null;
         return (
           <div>
             <nav className="main-header-nav">
