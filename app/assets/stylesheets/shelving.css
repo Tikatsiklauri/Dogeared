@@ -28,3 +28,51 @@
 a  {
 text-decoration: none;
 }
+
+.addToShelfButton {
+    background: #409D69;
+    color: #FFFFFF;
+    cursor: pointer;
+    border-radius: 4px;
+    float: left;
+    margin-top: 10px;
+    height: 30px;
+    line-height: 1.15;
+    width: 110px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    box-sizing: content-box;
+    padding-left: 8px;
+    padding-right: 8px;
+    position: relative;
+    display: inline-block;
+    font-family: "Lato", "Helvetica Neue", "Helvetica", sans-serif;
+    font-size: 14px;
+}
+
+.addToShelfButton:hover {
+    background: #2a6b46;
+}
+.addToShelfButton:focus {
+    outline: none;
+}
+
+.shelfDisplay {
+    position: absolute;
+    z-index: 1;
+    margin-top: 46px;
+    background-color: white;
+    border: 1px solid gray;
+    padding: 5px;
+    font-family: "Lato", "Helvetica Neue", "Helvetica", sans-serif;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.shelfButtonItem {
+    padding: 5px
+}
+.shelfButtonItem:hover {
+    background-color: lightgray;
+}
