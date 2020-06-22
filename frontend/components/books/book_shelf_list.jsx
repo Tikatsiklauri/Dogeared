@@ -53,10 +53,10 @@ class BookShelfList extends React.Component {
        })
        return (
          <div>
-            <button className="wantToReadButton" onClick={this.showMenu}>Want to Read</button>
+            <button className="addToShelfButton" onClick={this.showMenu}>Add to Shelf</button>
             {this.state.showMenu
             ?
-            <div>{eachShelf}</div>
+            <div className="shelfDisplay" >{eachShelf}</div>
             :
             null
             }
