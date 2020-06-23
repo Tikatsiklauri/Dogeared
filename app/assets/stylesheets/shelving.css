@@ -38,7 +38,7 @@ text-decoration: none;
     margin-top: 10px;
     height: 30px;
     line-height: 1.15;
-    width: 110px;
+    width: 130px;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -68,6 +68,7 @@ text-decoration: none;
     font-family: "Lato", "Helvetica Neue", "Helvetica", sans-serif;
     font-size: 12px;
     cursor: pointer;
+    min-width: 140px;
 }
 
 .shelfButtonItem {
