@@ -38,7 +38,7 @@ class BookShelfList extends React.Component {
    }
 
    render() {
-    //    debugger
+      //  debugger
        const {shelves} = this.props;
        let eachShelf = shelves.slice(1).map((shelf) => {
            return (
