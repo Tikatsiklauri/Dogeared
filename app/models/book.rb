@@ -10,4 +10,6 @@ class Book < ApplicationRecord
     has_many :shelves,
     through: :shelvings,
     source: :shelf
+
+    has_many :reviews
 end
