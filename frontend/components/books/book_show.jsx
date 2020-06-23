@@ -3,6 +3,7 @@ import { withRouter } from 'react-router-dom';
 import { Link, Redirect } from 'react-router-dom';
 import NavbarContainer from '../navbar_logged_in/navbar_container';
 import BookShelfListContainer from './book_shelf_list_container';
+import CreateReviewContainer from '../reviews/create_review_container';
 
 
 class BookShow extends React.Component {
@@ -57,6 +58,9 @@ class BookShow extends React.Component {
                         </ul>
                     </div>
             </div>
+            </div>
+            <div>
+                <CreateReviewContainer/>
             </div>
         </div>
         )
