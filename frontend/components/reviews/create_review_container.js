@@ -14,10 +14,11 @@ const msp = (state, ownProps) => {
 
     }
    
-
     return {
         review,
-        type: 'save'
+        type: 'save',
+        bookTitle: state.entities.books[ownProps.match.params.bookId].title,
+        userName: state.entities.users[state.session.id].name
     }
    
 }

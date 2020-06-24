@@ -29,6 +29,8 @@ class BookShow extends React.Component {
         this.props.history.push('/shelves/:userId/:shelfId')
     }
 
+  
+
     render() {
         const { book } = this.props;
         if(!book) return <div>Loading</div>
@@ -66,15 +68,18 @@ class BookShow extends React.Component {
                 <CreateReviewContainer/>
             </div>
             <div>
-                <ul>
+                <div className="communityReviews">COMMUNITY REVIEWS</div>
+                <div className="reviewsArea">
                     {this.props.reviews.map(review => (
-                        <li>
-                            <h3>{review.body} </h3>
-                            <h3>{review.name}</h3>
-                            <h3>{review.rating}</h3>
-                            </li>
+                        <div className="reviewsDiv">
+                            <div className="usernameAndRate">
+                                <p className="reviewUserName">{review.name}</p>
+                                <p className="ratedIt">{`rated it ${review.rating} stars`}</p>
+                            </div>
+                            <p>{review.body} </p>
+                        </div>
                     ))}
-                </ul>
+                </div>
             </div>
         </div>
         )
