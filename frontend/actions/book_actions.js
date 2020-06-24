@@ -9,9 +9,10 @@ export const receiveAllbooks = (books) => ({
     books
 })
 
-export const receivebook = (book) => ({
+export const receivebook = ({books, reviews}) => ({
     type: RECEIVE_BOOK,
-    book
+    books,
+    reviews
 })
 export const removeBook = (book) => ({
     type: REMOVE_BOOK,

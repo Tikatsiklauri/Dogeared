@@ -1,5 +1,6 @@
 
 user_shelves = []
+all_books = {}
 json.shelves do
     user.shelves.each do |shelf|
         json.set! shelf.id do
@@ -8,6 +9,7 @@ json.shelves do
             books_ids = []
             shelf.books.each do |book|
                 books_ids << book.id
+                all_books[book.id] = shelf.id
             end
             json.books_ids books_ids
         end
@@ -17,4 +19,5 @@ end
 json.user do
     json.user_shelves user_shelves
     json.extract! user, :id, :email, :name
+    json.books all_books
 end

@@ -6,10 +6,12 @@ class CreateReview extends React.Component {
         super(props);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.state = this.props.review;
+        this.defineAction = this.defineAction.bind(this)
 
     }
     defineAction() {
-        if (this.props.type.type === 'save') {
+        debugger
+        if (this.props.type === 'save') {
             return this.props.createReview
         } else {
             return this.props.updateReview
@@ -21,7 +23,7 @@ class CreateReview extends React.Component {
         };
     }
     handleSubmit(e) {
-        debugger
+        // debugger
         e.preventDefault();
         let action = this.defineAction()
         action(this.state).then(() => this.props.history.push(`/books/${this.state.book_id}`));

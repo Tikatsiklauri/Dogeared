@@ -11,7 +11,7 @@ const shelfReducer = (state = {}, action) => {
     switch (action.type) {
         case RECEIVE_ALL_SHELVES:
         case RECEIVE_CURRENT_USER:
-            return merge({}, state, action.shelves);
+            return merge({}, action.shelves);
         case RECEIVE_SHELF:
             return merge({}, state, { [action.payload.id]: action.payload });
         case REMOVE_SHELF:

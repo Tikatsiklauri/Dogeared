@@ -6,7 +6,9 @@ import BookShelfList from './book_shelf_list';
 const msp = (state) => {
     // debugger
     return {
-    shelves: Object.values(state.entities.shelves)
+        shelves: Object.values(state.entities.shelves),
+        user: state.entities.users[state.session.id],
+        moreShelf: state.entities.shelves
     }
 }
 
