@@ -48,7 +48,7 @@ class Navbar extends React.Component {
                 </li>
                 <Link
                   id="mybooksLink"
-                  to={`/shelves/${this.props.currentUser}`}
+                  to={`/shelves/${this.props.currentUser}/${this.props.allShelf}`}
                 >
                   <li className="clickable" role="button" aria-haspopup="true">
                     My Books

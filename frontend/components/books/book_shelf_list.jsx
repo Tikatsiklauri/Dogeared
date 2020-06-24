@@ -14,13 +14,14 @@ class BookShelfList extends React.Component {
     }
 
     componentDidMount() {
-        this.props.fetchShelves()
        
     }
 
    addBooktoShelf(shelf_id) {
-      
-       this.props.createShelving( this.props.book_id, shelf_id, this.props.shelves[0].id ); 
+     return e => {
+       this.props.createShelving( this.props.book_id, shelf_id, this.props.shelves[0].id );
+       e.currentTarget.parentNode.parentNode.firstElementChild.innerHTML = this.props.moreShelf[shelf_id].name
+      }
     
    }
 
@@ -40,20 +41,26 @@ class BookShelfList extends React.Component {
    render() {
       //  debugger
        const {shelves} = this.props;
+       let shelfId = this.props.user.books[this.props.book_id]
+       let buttonText = 'Want to Read'
+       if(shelves.length){
+          buttonText = shelfId ? this.props.moreShelf[shelfId].name : 'Want to Read'
+       }
        let eachShelf = shelves.slice(1).map((shelf) => {
            return (
              <li
                key={shelf.id}
                className="shelfButtonItem"
-               onClick={() => this.addBooktoShelf(shelf.id)}
+               onClick={this.addBooktoShelf(shelf.id, buttonText)}
              >
                {shelf.name}
              </li>
            );
        })
+  
        return (
          <div>
-            <button className="addToShelfButton" onClick={this.showMenu}>Add to Shelf</button>
+            <button className="addToShelfButton" onClick={this.showMenu}>{buttonText}</button>
             {this.state.showMenu
             ?
             <div className="shelfDisplay" >{eachShelf}</div>

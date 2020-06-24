@@ -7,7 +7,8 @@ import { fetchBooks } from '../../actions/book_actions';
 const msp = (state) => {
     return {
         currentUser: state.session.id,
-        books: Object.values(state.entities.books)
+        books: Object.values(state.entities.books),
+        allShelf: Object.keys(state.entities.shelves)[0]
     }
 };
 

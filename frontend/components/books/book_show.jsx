@@ -15,6 +15,7 @@ class BookShow extends React.Component {
     }
     componentDidMount() {
         this.props.fetchBook(this.props.match.params.bookId)
+        // this.props.fetchReviews(this.props.match.params.bookId)
     }
     // handleClick() {
     //     this.props.history.replace("/")
@@ -30,6 +31,7 @@ class BookShow extends React.Component {
 
     render() {
         const { book } = this.props;
+        if(!book) return <div>Loading</div>
         // debugger
         return (
             <div>
@@ -59,8 +61,20 @@ class BookShow extends React.Component {
                     </div>
             </div>
             </div>
+            
             <div>
                 <CreateReviewContainer/>
+            </div>
+            <div>
+                <ul>
+                    {this.props.reviews.map(review => (
+                        <li>
+                            <h3>{review.body} </h3>
+                            <h3>{review.name}</h3>
+                            <h3>{review.rating}</h3>
+                            </li>
+                    ))}
+                </ul>
             </div>
         </div>
         )

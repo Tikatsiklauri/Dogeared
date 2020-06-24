@@ -9,12 +9,15 @@ User.destroy_all
 Book.destroy_all
 Shelf.destroy_all
 Shelving.destroy_all
+Review.destroy_all
 
 demoUser=User.create({
     name: 'demouser',
     email: 'demo@user',
     password: 'testtest'
 })
+
+user2 = User.create({name: 'SarahReadsss', email: 'sarah@nowhere.com', password: 'lizardbrains212'})
 
 all_shelves = Shelf.create!({user_id: demoUser.id, name: "All"})
 read_shelf = Shelf.create!({user_id: demoUser.id, name: "Read"})
@@ -175,3 +178,6 @@ book9 = Book.create!({
     It went on to win the Pulitzer Prize in 1961 and was later made into an Academy
     Award-winning film, also a classic."
 })
+
+
+Review.create!(user_id: user2.id, book_id: book1.id, body: 'so clever, could not believe it', rating: 2)

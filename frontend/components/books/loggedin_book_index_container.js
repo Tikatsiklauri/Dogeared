@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import { fetchBooks } from '../../actions/book_actions';
 import { requestShelvings } from '../../actions/shelving_actions';
+import { fetchShelves} from '../../actions/shelf_actions';
 import LoggedInBooksIndex from './loggedin_book_index';
 
 const msp = (state) => ({
@@ -10,6 +11,7 @@ const msp = (state) => ({
 
 const mdp = dispatch => ({
     fetchBooks: () => dispatch(fetchBooks()),
+    fetchShelves: () => dispatch(fetchShelves()),
     requestShelvings: () => dispatch(requestShelvings())
 })
 

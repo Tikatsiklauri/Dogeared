@@ -12,6 +12,7 @@ class LoggedInBooksIndex extends React.Component {
         this.showBook = this.showBook.bind(this);
     }
     componentDidMount() {
+        this.props.fetchShelves()
         this.props.fetchBooks();
     }
 

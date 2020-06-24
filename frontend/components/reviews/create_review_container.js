@@ -13,13 +13,11 @@ const msp = (state, ownProps) => {
         rating: ownProps.rating
 
     }
-    const type = {
-        type: ownProps.type
-    }
+   
 
     return {
         review,
-        type
+        type: 'save'
     }
    
 }
