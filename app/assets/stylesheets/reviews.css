@@ -3,7 +3,7 @@
     margin-top: 40px;
     padding: 20px;
     width: 60%;
-    min-height: 300px;
+    min-height: 400px;
 }
 
 #formBox {
@@ -16,7 +16,11 @@
     text-align: left;
     position: absolute;
     left: 120px;
+    font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    
 }
+
 
 .reviewText {
     margin-top: 80px;
@@ -24,9 +28,18 @@
     left: 120px;
     width: 400px;
 }
+textarea {
+    padding: 10px;
+    font-size: 14px;
+    font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.reviewText:focus {
+    outline: none;
+}
 
 .submit {
-    margin-top: 240px;
+    margin-top: 300px;
     position: absolute;
     left: 120px;
     font-size: 14px;
@@ -47,6 +60,13 @@
     margin-bottom: 30px;
     padding: 10px;
     margin-left: -170px;
+    font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: #00635d;
+}
+#secondHalf {
+    color: #181818;
 }
 
 .communityReviews {
@@ -65,6 +85,7 @@
      padding: 20px;
      margin-left: 140px;
      width: 50%;
+     min-height: 200px;
 }
 .usernameAndRate {
     display: flex;
@@ -122,3 +143,14 @@
     color: #c59b08;
 }
 
+.noReviewsDiv {
+    min-height: 200px;
+    
+}
+
+.noReviews {
+    padding: 20px;
+    margin-left: 100px;
+    font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+}

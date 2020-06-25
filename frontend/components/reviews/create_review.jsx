@@ -35,7 +35,7 @@ class CreateReview extends React.Component {
             <div id="reviewForm">
                 <form id="formBox" onSubmit={this.handleSubmit}>
                     <div id="ratingDiv">
-        <label id="myRating">{this.props.userName}, start your review of {this.props.bookTitle}</label>
+                        <label id="myRating">{`${this.props.userName}, `}<span id="secondHalf">start your review of {this.props.bookTitle}</span></label>
                         {/* <div className="rating">
                             <input type="radio" id="star5" name="rate" value="1" onChange={this.update('rating')} />
                             <label htmlFor="star5" title="text"></label>
