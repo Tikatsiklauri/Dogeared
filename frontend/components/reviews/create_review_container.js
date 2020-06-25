@@ -4,7 +4,7 @@ import { createReview, updateReview } from '../../actions/review_actions';
 import { withRouter } from 'react-router-dom';
 
 const msp = (state, ownProps) => {
-    debugger
+    // debugger
     const review = {
         id: ownProps.id,
         book_id: ownProps.match.params.bookId,
