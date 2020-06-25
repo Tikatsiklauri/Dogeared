@@ -31,7 +31,7 @@ class ShelfIndex extends React.Component {
   }
 
   addShelf() {
-    debugger
+    // debugger
     this.setState({ addShelf: true, user_id: this.props.userId })
   }
 
@@ -39,14 +39,14 @@ class ShelfIndex extends React.Component {
   AddShelfInput() {
     if (this.state.addShelf === true) {
       return (
-        <form onSubmit={this.handleSubmit}>
+        <form className="addShelfForm" onSubmit={this.handleSubmit}>
           <span className="addShelfText">Add a Shelf:</span>
           <input type="text" className="addShelfInput" id="add-shelf-input" value={this.state.name} onChange={this.update('name')}></input>
           <input type="submit" className="addBookButton" value="add"></input>
         </form>)
     } else {
       return (
-        <button className="bookShelves-button" onClick={this.addShelf}>Add shelf:</button>
+        <button className="bookshelvesButton" onClick={this.addShelf}>Add shelf:</button>
       )
     }
   }
