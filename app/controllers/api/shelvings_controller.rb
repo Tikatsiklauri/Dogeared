@@ -24,9 +24,11 @@ class Api::ShelvingsController < ApplicationController
     end
     
     def destroy
-        @shelving = Shelving.includes(:book).where(shelving_params).first
+      # debugger
+        # @shelving = Shelving.includes(:book).where(shelving_params).first
+        @shelving = Shelving.find_by(shelf_id: params[:shelving][:shelf_id], book_id: params[:shelving][:book_id])
         @shelving.destroy
-        @shelf = Shelving.find(@shelving.shelf)
+        # @shelf = Shelving.find(@shelving.shelf)
         render '/api/shelves/show', status: 202
     end
     

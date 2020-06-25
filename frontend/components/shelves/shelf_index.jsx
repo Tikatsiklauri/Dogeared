@@ -90,6 +90,11 @@ class ShelfIndex extends React.Component {
               </button>
             </nav>
             <div><h1 id="mybooksTitle">My Books</h1></div>
+            <div className="criteria">
+              <div>cover</div>
+              <div>title</div>
+              <div>author</div>
+            </div>
             <div className="bookshelfDiv">
               <h1 id="shelfTitle">Bookshelves</h1>
               {bookshelves}
