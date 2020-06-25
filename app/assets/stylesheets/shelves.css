@@ -10,6 +10,17 @@
     border-bottom: 1px solid #ebe8d5;
 }
 
+.criteria {
+    display: flex;
+    justify-content: space-between;
+    width: 35%;
+    margin-left: 520px;
+    font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    padding-top: 40px;
+    
+}
 #shelfTitle {
     text-decoration: none;
     font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;

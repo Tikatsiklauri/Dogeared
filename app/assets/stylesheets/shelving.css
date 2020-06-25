@@ -9,11 +9,18 @@
     width: 100%;
    padding: 10px;
    border-bottom: 1px solid #ebe8d5;
+   
+}
+.bookList {
+    width: 100%;
 }
 
-/* .bookOnShelfUl {
-     display: inline-block;
-} */
+.bookOnShelfUl {
+    width: 120%;
+     display: flex;
+     justify-content: space-between;
+      border-top: 1px solid #ebe8d5;
+}
 .shelfBookImage {
     height: 150px;
     width: auto;
@@ -24,9 +31,19 @@
     margin-left: 11px;
    margin-top: 10px;
    color: black;
+   font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+   font-size: 12px;
 }
 a  {
 text-decoration: none;
+}
+
+.bookAuthor {
+    margin-left: 11px;
+   margin-top: 10px;
+   color: black;
+   font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+   font-size: 12px;
 }
 
 .addToShelfButton {
