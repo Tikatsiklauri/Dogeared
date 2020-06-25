@@ -15,6 +15,7 @@ class BookShow extends React.Component {
     }
     componentDidMount() {
         this.props.fetchBook(this.props.match.params.bookId)
+        this.props.fetchShelves()
         // this.props.fetchReviews(this.props.match.params.bookId)
     }
     // handleClick() {
@@ -70,7 +71,9 @@ class BookShow extends React.Component {
             <div>
                 <div className="communityReviews">COMMUNITY REVIEWS</div>
                 <div className="reviewsArea">
-                    {this.props.reviews.map(review => (
+                    {this.props.reviews.length > 0 
+                    ?
+                    this.props.reviews.map(review => (
                         <div className="reviewsDiv">
                             <div className="usernameAndRate">
                                 <p className="reviewUserName">{review.name}</p>
@@ -78,7 +81,9 @@ class BookShow extends React.Component {
                             </div>
                             <p>{review.body} </p>
                         </div>
-                    ))}
+                    ))
+                :
+                            <div className="noReviewsDiv"><p className="noReviews">No reviews, be the first to review this book.</p></div>}
                 </div>
             </div>
         </div>
