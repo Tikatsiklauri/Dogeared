@@ -1,6 +1,7 @@
 .full-page {
     position: relative;
     display: flex;
+     border-bottom: 1px solid #ebe8d5;
     /* text-align: center; */
 }
 .book-section {
@@ -11,7 +12,7 @@
     /* border: 1px solid black; */
     margin: 10px;
     margin-left: 100px;
-     border-bottom: 1px solid #ebe8d5;
+    
     /* display: inline-block; */
 }
 
