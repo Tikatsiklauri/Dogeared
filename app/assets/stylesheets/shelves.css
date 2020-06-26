@@ -1,0 +1,122 @@
+#mybooksTitle {
+    color: #00635d;
+    text-decoration: none;
+    font-family: 'Merriweather', serif;;
+    font-size: 20px;
+    font-weight: 700;
+    text-decoration: none;
+    margin-left: 200px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ebe8d5;
+}
+
+.criteria {
+    display: flex;
+    justify-content: space-between;
+    width: 35%;
+    margin-left: 520px;
+    font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    padding-top: 40px;
+    
+}
+#shelfTitle {
+    text-decoration: none;
+    font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 10px 0;
+}
+
+.bookshelfDiv {
+     margin-left: 200px;
+     width: 20%;
+}
+
+.linkLi {
+    text-decoration: none;
+     color: #00635d;
+}
+
+.shelful:nth-child(2) {
+    color: #777777;
+}
+
+
+.shelfUl:nth-child(3) {
+    color: #00635d;
+}
+.shelfUl:nth-child(4) {
+    color: #00635d;
+}
+.shelfUl:nth-child(5) {
+    color: #00635d;
+}
+.eachShelf:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.bookshelvesButton {
+    margin-top: 10px;
+     font-size: 12px;
+    border-radius: 3px;
+    border: 1px solid #D6D0C4;
+    font-family: "Lato", "Helvetica Neue", "Helvetica", sans-serif;
+    padding: 4px 12px;
+    color: #333333;
+    cursor: pointer;
+    background-color: #F4F1EA;
+}
+
+
+.bookshelvesButton:hover {
+     background-color: #ede6d6;
+}
+
+.bookshelvesButton:focus {
+    outline: none;
+}
+
+.addShelfForm {
+    margin-top: 10px;
+}
+
+.addShelfText {
+    font-family: "Lato", "Helvetica Neue", "Helvetica", sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.addBookButton {
+    font-size: 12px;
+    border-radius: 3px;
+    border: 1px solid #D6D0C4;
+    font-family: "Lato", "Helvetica Neue", "Helvetica", sans-serif;
+    padding: 4px 4px;
+    color: #333333;
+    cursor: pointer;
+    background-color: #F4F1EA;
+}
+
+.addBookButton:hover {
+   background-color: #ede6d6;
+}
+
+.addBookButton:focus {
+    outline: none;
+}
+
+.addShelfInput {
+    border: 1px solid #D6D0C4;
+    font-family: "Lato", "Helvetica Neue", "Helvetica", sans-serif;
+    padding: 5px 4px;
+    border-radius: 3px;
+    margin-right: 3px;
+    margin-top: 5px;
+}
+
+.addShelfInput:focus {
+    outline: none;
+}

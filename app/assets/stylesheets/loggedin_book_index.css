@@ -12,7 +12,8 @@
     border: 1px solid #c2bdbd;
     background-color: white;
     width: calc(100vw / 2);
-    padding: 20px;
+    padding: 40px;
+    padding-bottom: 70px;
     margin: 20px;
     height: auto;
  
@@ -30,7 +31,7 @@
     font-family: "Helvetica Neue", Helvetica, sans-serif;
     font-size: 14px;
     height: 150px;
-    width: 350px;
+    width: 80%;
  
    
     /* height: 400px; */

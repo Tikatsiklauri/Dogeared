@@ -2,6 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Route, withRouter} from 'react-router-dom';
 import BookShowContainer from './book_show_container'; 
+import ShelfIndexContainer from '../shelves/shelf_index_container';
+import BookShelfListContainer from './book_shelf_list_container';
 
 class LoggedInBooksIndex extends React.Component {
     constructor(props) {
@@ -10,11 +12,9 @@ class LoggedInBooksIndex extends React.Component {
         this.showBook = this.showBook.bind(this);
     }
     componentDidMount() {
+        this.props.fetchShelves()
         this.props.fetchBooks();
     }
-
-
-
 
  
     handleOverview(overview){
@@ -39,11 +39,12 @@ class LoggedInBooksIndex extends React.Component {
         const { books } = this.props;
         const displayBooks = books.map(book => {
             return (
-                <div>
+                <div key={book.id}>
                 <div className="book-synopsis">
                 <div className="pic-box">
                         <li className="book">
                             <Link to={`/books/${book.id}`}><img src={book.image_url}/></Link>
+                        <div> <BookShelfListContainer book_id={book.id} /></div>
                         </li>
                 </div>
                 <div className="half-info">
@@ -52,6 +53,7 @@ class LoggedInBooksIndex extends React.Component {
                     <li className="book-description">{this.handleOverview(book.overview)}<span>...</span><span id="continue"onClick={() => this.showBook(book.id)}>Continue reading</span></li>
 
                 </div>
+                    
                     
                 </div>
                 </div>

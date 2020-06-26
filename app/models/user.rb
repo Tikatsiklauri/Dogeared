@@ -3,16 +3,28 @@ class User < ApplicationRecord
     validates :password_digest, presence: true
     validates :name, presence: true
     validates :password, length: {minimum: 6, allow_nil: true}
+    
     after_initialize :ensure_session_token
+    
     attr_reader :password
 
-     def self.find_by_credentials(email, password)
+    has_many :shelves,
+    foreign_key: :user_id,
+    class_name: :Shelf
+
+    has_many :books,
+    through: :shelves,
+    source: :books
+
+   has_many :reviews
+
+    def self.find_by_credentials(email, password)
         user = User.find_by(email: email)
         return nil unless user && user.is_password?(password)
         user
     end
 
-     def is_password?(password)
+    def is_password?(password)
         bcrypt = BCrypt::Password.new(self.password_digest)
         bcrypt.is_password?(password)
     end

@@ -1,0 +1,96 @@
+.shelfShowBookContainer {
+    width: 40%;
+    /* align-items: center; */
+    margin-left: 500px;
+    margin-top: -145px;
+}
+
+.bookOnShelf {
+    width: 100%;
+   padding: 10px;
+   border-bottom: 1px solid #ebe8d5;
+   
+}
+.bookList {
+    width: 100%;
+}
+
+.bookOnShelfUl {
+    width: 120%;
+     display: flex;
+     justify-content: space-between;
+      border-top: 1px solid #ebe8d5;
+}
+.shelfBookImage {
+    height: 150px;
+    width: auto;
+    padding-bottom: 30px;
+}
+
+.bookTitle {
+    margin-left: 11px;
+   margin-top: 10px;
+   color: black;
+   font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+   font-size: 12px;
+}
+a  {
+text-decoration: none;
+}
+
+.bookAuthor {
+    margin-left: 11px;
+   margin-top: 10px;
+   color: black;
+   font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+   font-size: 12px;
+}
+
+.addToShelfButton {
+    background: #409D69;
+    color: #FFFFFF;
+    cursor: pointer;
+    border-radius: 4px;
+    float: left;
+    margin-top: 10px;
+    height: 30px;
+    line-height: 1.15;
+    width: 130px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    box-sizing: content-box;
+    padding-left: 8px;
+    padding-right: 8px;
+    position: relative;
+    display: inline-block;
+    font-family: "Lato", "Helvetica Neue", "Helvetica", sans-serif;
+    font-size: 14px;
+}
+
+.addToShelfButton:hover {
+    background: #2a6b46;
+}
+.addToShelfButton:focus {
+    outline: none;
+}
+
+.shelfDisplay {
+    position: absolute;
+    z-index: 1;
+    margin-top: 46px;
+    background-color: white;
+    border: 1px solid gray;
+    padding: 5px;
+    font-family: "Lato", "Helvetica Neue", "Helvetica", sans-serif;
+    font-size: 12px;
+    cursor: pointer;
+    min-width: 140px;
+}
+
+.shelfButtonItem {
+    padding: 5px
+}
+.shelfButtonItem:hover {
+    background-color: lightgray;
+}

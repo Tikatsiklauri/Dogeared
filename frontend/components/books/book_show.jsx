@@ -2,6 +2,8 @@ import React from 'react';
 import { withRouter } from 'react-router-dom';
 import { Link, Redirect } from 'react-router-dom';
 import NavbarContainer from '../navbar_logged_in/navbar_container';
+import BookShelfListContainer from './book_shelf_list_container';
+import CreateReviewContainer from '../reviews/create_review_container';
 
 
 class BookShow extends React.Component {
@@ -9,9 +11,12 @@ class BookShow extends React.Component {
         super(props)
         // this.handleClick = this.handleClick.bind(this);
         this.handleClick = this.handleClick.bind(this)
+        this.handleMyBooksClick = this.handleMyBooksClick.bind(this)
     }
     componentDidMount() {
         this.props.fetchBook(this.props.match.params.bookId)
+        this.props.fetchShelves()
+        // this.props.fetchReviews(this.props.match.params.bookId)
     }
     // handleClick() {
     //     this.props.history.replace("/")
@@ -21,8 +26,15 @@ class BookShow extends React.Component {
         this.props.history.push('/navbar')
     }
 
+    handleMyBooksClick() {
+        this.props.history.push('/shelves/:userId/:shelfId')
+    }
+
+  
+
     render() {
         const { book } = this.props;
+        if(!book) return <div>Loading</div>
         // debugger
         return (
             <div>
@@ -30,8 +42,8 @@ class BookShow extends React.Component {
                     <div className="small-logo">Dog<span className="small-logo-part2">Eared</span></div>
                     <ul className="personal-menu">
                         <li className="clickable" role="button" aria-haspopup="true" onClick={this.handleClick}>Home</li>
-                        <li className="clickable" role="button" aria-haspopup="true">My Books</li>
-                        <li className="clickable" role="button" aria-haspopup="true">Browse</li>
+                        <li className="clickable" role="button" aria-haspopup="true" onClick={this.handleMyBooksClick}>My Books</li>
+                        {/* <li className="clickable" role="button" aria-haspopup="true">Browse</li> */}
                     </ul>
                     <button className="logout" onClick={this.props.logout}>Sign out</button>
                 </nav>
@@ -40,6 +52,7 @@ class BookShow extends React.Component {
                 <div className="book-details-div">
                     <div className="image">
                         <img src={book.image_url} alt={book.title}/>
+                        <div><BookShelfListContainer/></div>
                     </div>
                 </div>
                     <div className="book-info">
@@ -50,6 +63,28 @@ class BookShow extends React.Component {
                         </ul>
                     </div>
             </div>
+            </div>
+            
+            <div>
+                <CreateReviewContainer/>
+            </div>
+            <div>
+                <div className="communityReviews">COMMUNITY REVIEWS</div>
+                <div className="reviewsArea">
+                    {this.props.reviews.length > 0 
+                    ?
+                    this.props.reviews.map(review => (
+                        <div className="reviewsDiv">
+                            <div className="usernameAndRate">
+                                <p className="reviewUserName">{review.name}</p>
+                                <p className="ratedIt">{`rated it ${review.rating} stars`}</p>
+                            </div>
+                            <p>{review.body} </p>
+                        </div>
+                    ))
+                :
+                            <div className="noReviewsDiv"><p className="noReviews">No reviews, be the first to review this book.</p></div>}
+                </div>
             </div>
         </div>
         )

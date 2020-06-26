@@ -1,0 +1,156 @@
+
+#reviewForm {
+    margin-top: 40px;
+    padding: 20px;
+    width: 60%;
+    min-height: 400px;
+}
+
+#formBox {
+    min-height: 300px;
+}
+
+#reviewQuestion {
+    margin-top: 50px;
+    margin-bottom: 10px;
+    text-align: left;
+    position: absolute;
+    left: 120px;
+    font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    
+}
+
+
+.reviewText {
+    margin-top: 80px;
+    position: absolute;
+    left: 120px;
+    width: 400px;
+}
+textarea {
+    padding: 10px;
+    font-size: 14px;
+    font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.reviewText:focus {
+    outline: none;
+}
+
+.submit {
+    margin-top: 300px;
+    position: absolute;
+    left: 120px;
+    font-size: 14px;
+    border-radius: 3px;
+    border: 1px solid #D6D0C4;
+    font-family: "Lato", "Helvetica Neue", "Helvetica", sans-serif;
+    padding: 8px 12px;
+    color: #333333;
+    cursor: pointer;
+    background-color: #F4F1EA;
+}
+
+.submit:hover {
+    background-color: #ede6d6;
+}
+
+#myRating {
+    margin-bottom: 30px;
+    padding: 10px;
+    margin-left: -170px;
+    font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: #00635d;
+}
+#secondHalf {
+    color: #181818;
+}
+
+.communityReviews {
+    font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 20px;
+    margin-top: 40px;
+    margin-left: 100px;
+}
+.reviewsArea {
+    border-top: 1px solid #ebe8d5;
+}
+.reviewsDiv {
+     border-bottom: 1px solid #ebe8d5;
+     padding: 20px;
+     margin-left: 140px;
+     width: 50%;
+     min-height: 200px;
+}
+.usernameAndRate {
+    display: flex;
+}
+.reviewUserName {
+    color: #00635d;
+    font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.ratedIt {
+    margin-left: 5px;
+    font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+
+*{
+    margin: 0;
+    padding: 0;
+}
+.rate {
+    float: left;
+    height: 46px;
+    padding: 0 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 90px;
+}
+.rate:not(:checked) > input {
+    position:absolute;
+    top:-9999px;
+}
+.rate:not(:checked) > label {
+    float:right;
+    width:1em;
+    overflow:hidden;
+    white-space:nowrap;
+    cursor:pointer;
+    font-size:30px;
+    color:#ccc;
+}
+.rate:not(:checked) > label:before {
+    content: '★ ';
+}
+.rate > input:checked ~ label {
+    color: #ffc700;    
+}
+.rate:not(:checked) > label:hover,
+.rate:not(:checked) > label:hover ~ label {
+    color: #deb217;  
+}
+.rate > input:checked + label:hover,
+.rate > input:checked + label:hover ~ label,
+.rate > input:checked ~ label:hover,
+.rate > input:checked ~ label:hover ~ label,
+.rate > label:hover ~ input:checked ~ label {
+    color: #c59b08;
+}
+
+.noReviewsDiv {
+    min-height: 200px;
+    
+}
+
+.noReviews {
+    padding: 20px;
+    margin-left: 100px;
+    font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+}
