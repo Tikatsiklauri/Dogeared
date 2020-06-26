@@ -4,13 +4,13 @@ import { Link } from 'react-router-dom';
 class ShelfShow extends React.Component {
     constructor(props) {
         super(props)
-        this.removeBookfromShelf = this.removeBookfromShelf.bind(this)
+        // this.removeBookfromShelf = this.removeBookfromShelf.bind(this)
     }
 
-    removeBookfromShelf() {
-        debugger
-        this.props.deleteShelving(this.props.shelf.id)
-    }
+    // removeBookfromShelf() {
+    //     debugger
+    //     this.props.deleteShelving(this.props.shelf.id)
+    // }
 
 
     render() {
@@ -34,7 +34,7 @@ class ShelfShow extends React.Component {
                                 </div>  
                                 </Link> 
                                 <div className="bookAuthor">{book.author}</div>
-                               <div onClick={this.removeBookfromShelf}>x</div>
+                               {/* <div onClick={this.removeBookfromShelf}>x</div> */}
                             </div>
                         )
                         } else {

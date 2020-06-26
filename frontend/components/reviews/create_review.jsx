@@ -10,7 +10,7 @@ class CreateReview extends React.Component {
 
     }
     defineAction() {
-        debugger
+        // debugger
         if (this.props.type === 'save') {
             return this.props.createReview
         } else {
