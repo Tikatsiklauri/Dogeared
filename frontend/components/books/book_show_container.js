@@ -9,9 +9,10 @@ import { fetchShelves } from '../../actions/shelf_actions';
 const msp = (state, ownProps) => {
     // debugger
     return {
-    book: state.entities.books[ownProps.match.params.bookId],
-    reviews: Object.values(state.entities.reviews)
-    }
+      book: state.entities.books[ownProps.match.params.bookId],
+      reviews: Object.values(state.entities.reviews),
+      allShelf: Object.keys(state.entities.shelves)[0],
+    };
 }
 
 const mdp = dispatch => ({

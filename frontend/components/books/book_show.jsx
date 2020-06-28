@@ -27,7 +27,7 @@ class BookShow extends React.Component {
     }
 
     handleMyBooksClick() {
-        this.props.history.push('/shelves/:userId/:shelfId')
+        this.props.history.push(`/shelves/:userId/${this.props.allShelf}`)
     }
 
   
