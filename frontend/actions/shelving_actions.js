@@ -19,13 +19,11 @@ export const receiveShelving = (payload) => {
     };
 };
 
-export const removeShelving = (shelving) => {
-
+export const removeShelving = (shelf) => {
     return {
 
         type: REMOVE_SHELVING,
-        shelvingId: shelving.id,
-        bookId: shelving.book_id
+        payload: shelf
     };
 };
 
@@ -65,9 +63,9 @@ export const updateShelving = (id) => (dispatch) => {
     return ShelvingUtil.updateShelving(id).then((shelving) => dispatch(receiveShelving(shelving)))
 };
 
-export const deleteShelving = (shelvingId) => (dispatch) => {
+export const deleteShelving = (shelvingId, bookId) => (dispatch) => {
 
-    return ShelvingUtil.removeShelving(shelvingId).then((shelving) => {
+    return ShelvingUtil.removeShelving(shelvingId, bookId).then((shelving) => {
 
         dispatch(removeShelving(shelving));
     }

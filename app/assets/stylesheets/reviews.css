@@ -131,6 +131,16 @@ textarea {
 .rate > input:checked ~ label {
     color: #ffc700;    
 }
+.yellow-star {
+    color: #ffc700;
+    display: inline-block;
+}
+.black-star{
+    color: #ccc;
+    display: inline-block;
+}
+
+
 .rate:not(:checked) > label:hover,
 .rate:not(:checked) > label:hover ~ label {
     color: #deb217;  

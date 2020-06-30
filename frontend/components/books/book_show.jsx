@@ -30,7 +30,13 @@ class BookShow extends React.Component {
         this.props.history.push(`/shelves/:userId/${this.props.allShelf}`)
     }
 
-  
+    handleStars(num){
+        let arr = [false, false, false, false, false]
+        for(let i = 0; i < num ; i ++){
+            arr[i] = true 
+        }
+        return arr.map(bool => (<p class={bool ? 'yellow-star': 'black-star'}>{' ★ '}</p>))
+    }
 
     render() {
         const { book } = this.props;
@@ -77,7 +83,7 @@ class BookShow extends React.Component {
                         <div className="reviewsDiv">
                             <div className="usernameAndRate">
                                 <p className="reviewUserName">{review.name}</p>
-                                <p className="ratedIt">{`rated it ${review.rating} stars`}</p>
+                                <p className="ratedIt">rated it {this.handleStars(review.rating)}</p>
                             </div>
                             <p>{review.body} </p>
                         </div>

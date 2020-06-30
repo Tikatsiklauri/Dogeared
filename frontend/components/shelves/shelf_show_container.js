@@ -7,11 +7,12 @@ const msp = (state, ownProps) => {
     return {
        shelf: state.entities.shelves[ownProps.match.params.shelfId],
        books: state.entities.books
+       
     }
 }
 
 const mdp = (dispatch) => ({
-    deleteShelving: (shelfId) => dispatch(deleteShelving(shelfId))
+    deleteShelving: (shelfId, book_id) => dispatch(deleteShelving(shelfId, book_id))
 });
 
 export default withRouter(connect(msp, mdp)(ShelfShow));

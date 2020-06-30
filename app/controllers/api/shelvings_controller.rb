@@ -24,12 +24,38 @@ class Api::ShelvingsController < ApplicationController
     end
     
     def destroy
-      # @shelving = Shelving.includes(:book).where(shelving_params).first
-      debugger
-      @shelving = Shelving.find(params[:id])
+
+      #this shelvingId is actually a shelf id, I (TIKA) can change this, dont get confused
+      shelf = Shelf.find(params[:shelvingId])
+      shelves = Shelf.where(user_id: current_user.id)
+      shelf_ids = []
+      if shelf && shelf.name == 'All'
+        shelves.each do |shelf|
+          current_shelving = Shelving.find_by(shelf_id: shelf.id, book_id: params[:bookId])
+          if current_shelving
+            shelf_ids << current_shelving.shelf_id
+            current_shelving.destroy
+          end
+        end
+      else
+        @shelving = Shelving.find_by(shelf_id: params[:shelvingId], book_id: params[:bookId])
+        shelf_ids << @shelving.shelf_id
         @shelving.destroy
-        # @shelf = Shelving.find(@shelving.shelf)
-        render '/api/shelves/show', status: 202
+        count = 0
+        shelves.each do |shelf|
+          current_shelving = Shelving.find_by(shelf_id: shelf.id, book_id: params[:bookId])
+          count +=1 if current_shelving
+        end
+        if count == 1
+          all_shelf = Shelving.find_by(shelf_id: shelves.first.id, book_id: params[:bookId])
+          if all_shelf
+            shelf_ids << all_shelf.shelf_id
+            all_shelf.destroy 
+          end
+        end
+      end
+      @shelves = Shelf.where(id: shelf_ids)
+      render '/api/shelves/index', status: 202
     end
     
     private

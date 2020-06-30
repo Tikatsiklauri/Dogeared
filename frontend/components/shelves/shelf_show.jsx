@@ -7,9 +7,8 @@ class ShelfShow extends React.Component {
         this.removeBookfromShelf = this.removeBookfromShelf.bind(this)
     }
 
-    removeBookfromShelf() {
-        debugger
-        this.props.deleteShelving(this.props.shelf.id)
+    removeBookfromShelf(book_id) {
+        this.props.deleteShelving(this.props.shelf.id, book_id)
     }
 
 
@@ -34,7 +33,7 @@ class ShelfShow extends React.Component {
                                 </div>  
                                 </Link> 
                                 <div className="bookAuthor">{book.author}</div>
-                               <div onClick={this.removeBookfromShelf}>x</div>
+                               <div onClick={() => this.removeBookfromShelf(book.id)}>x</div>
                             </div>
                         )
                         } else {
