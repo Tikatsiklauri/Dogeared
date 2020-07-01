@@ -73,7 +73,7 @@ class SignupForm extends React.Component {
                     </div>
                 </form>
                 <form id="demo-user">
-                    <button className="demo-button" onClick={() => {
+                    <button className="demo-button" onClick={(e) => { e.preventDefault();
                         this.props.login(this.demoUser).then(() => this.props.history.push('/navbar'))
                     }} type="submit" value="Demo">Demo</button>
                 </form>
