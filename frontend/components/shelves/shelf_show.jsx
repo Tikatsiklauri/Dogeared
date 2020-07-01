@@ -33,7 +33,7 @@ class ShelfShow extends React.Component {
                                 </div>  
                                 </Link> 
                                 <div className="bookAuthor">{book.author}</div>
-                               <div onClick={() => this.removeBookfromShelf(book.id)}>x</div>
+                               <div className="deleteX" onClick={() => this.removeBookfromShelf(book.id)}>x</div>
                             </div>
                         )
                         } else {

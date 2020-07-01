@@ -94,3 +94,12 @@ text-decoration: none;
 .shelfButtonItem:hover {
     background-color: lightgray;
 }
+
+
+.deleteX {
+    font-family: "Lato", "Helvetica Neue", "Helvetica", sans-serif;
+    color: #999999;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 16px;
+}
