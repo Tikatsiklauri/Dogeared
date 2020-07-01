@@ -37,13 +37,13 @@ class Splash extends React.Component {
                 </div>
                 <div className="text-section">
                     <div className="suggest-texts"><h3>Deciding what to read next?</h3>
-                        <p>You’re in the right place. Tell us what titles or genres you’ve 
+                        <p className="suggestParagraph">You’re in the right place. Tell us what titles or genres you’ve 
                             enjoyed in the past, and we’ll give you surprisingly insightful 
                             recommendations.
                         </p>
                     </div>
                     <div className="suggest-texts"><h3>What are your friends reading?</h3>
-                         <p>Chances are your friends are discussing their favorite (and least favorite)
+                        <p className="suggestParagraph">Chances are your friends are discussing their favorite (and least favorite)
                             books on Goodreads.
                         </p>
                     </div>

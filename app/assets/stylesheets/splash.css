@@ -4,6 +4,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-bottom: 60px;
 }
 
 .allsplash {
@@ -47,6 +48,8 @@
     height: 100px;
     position: relative;
     margin-top: 7px;
+    min-width: 200px;
+
 }
 
 .signup-div {
@@ -107,6 +110,11 @@
     font-size: 14px;
     padding: 15px;
     color: #3D3D3D;
+    margin-top: 10px;
+}
+
+.suggestParagraph {
+    margin-top: 5px;
 }
 h3 {
     font-size: 18px;
