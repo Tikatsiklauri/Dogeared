@@ -1,8 +1,9 @@
 class User < ApplicationRecord 
-    validates :email, :session_token, presence: true, uniqueness: true
+    validates :email, :session_token, presence: {message: 'Sorry, you must enter an email address to sign up for Goodreads.'}, uniqueness: true
     validates :password_digest, presence: true
-    validates :name, presence: true
-    validates :password, length: {minimum: 6, allow_nil: true}
+    validates :name, presence: {message:'Sorry, you must enter a name to sign up for Goodreads.'}
+    validates :password, length: {minimum: 6, allow_nil: true, message:'Sorry, you must enter a password of six or more characters'}
+
     
     after_initialize :ensure_session_token
     
