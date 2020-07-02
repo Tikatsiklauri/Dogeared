@@ -32,7 +32,7 @@ class LoginForm extends React.Component {
     render() {
         let errors = this.props.errors
         if (errors.length > 0) {
-           return <Redirect to="/errors"/>
+           return <Redirect to="/sign_in"/>
 
         }
       

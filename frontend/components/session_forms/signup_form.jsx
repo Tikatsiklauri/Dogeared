@@ -37,7 +37,7 @@ class SignupForm extends React.Component {
         let errors = this.props.errors
         // debugger
         if (errors.length > 0) {
-            return <Redirect to='/errors'/>
+            return <Redirect to='/sign_up'/>
         }
 
         return (

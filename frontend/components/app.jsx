@@ -12,7 +12,9 @@ import ShelfIndexContainer from './shelves/shelf_index_container'
 const App = () => (
     <div>
             <AuthRoute exact path="/" component={SplashContainer}/> 
-            <AuthRoute exact path="/errors" component={LoginErrorsContainer} />
+            <AuthRoute exact path="/sign_in" component={LoginErrorsContainer} />
+            <AuthRoute exact path="/sign_up" component={LoginErrorsContainer} />
+       
             <Switch>
             <ProtectedRoute exact path="/navbar" component={NavbarContainer}/>
             <ProtectedRoute path="/books/:bookId" component={BookShowContainer} />
