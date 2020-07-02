@@ -78,7 +78,7 @@ class LoginErrors extends React.Component {
         return (
             <div className="errors-container">
                 <div className="logo-container">
-                    <div className="sm-logo">Dog<span className="sm-logo-part2">Eared</span></div>
+                    <Link onClick={this.handleButton}><div className="sm-logo">Dog<span className="sm-logo-part2">Eared</span></div></Link>
                 </div>
             
                <div className="main-content">
@@ -130,10 +130,10 @@ class LoginErrors extends React.Component {
                         null
                         }
                         <br />
-                            <label className="label">Email
+                            <label className="label">Email address
                             <input type="email"
                                 value={this.state.email}
-                                placeholder="Email address"
+                                placeholder="you@yours.com"
                                 onChange={this.update('email')}
                                 className="signup-area"
                             />
@@ -142,7 +142,7 @@ class LoginErrors extends React.Component {
                             <label className="label">Password
                             <input type="password"
                                 value={this.state.password}
-                                placeholder="Password"
+                                placeholder=""
                                 onChange={this.update('password')}
                                 className="signup-area"
                                 autoComplete='off'
