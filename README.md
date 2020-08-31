@@ -1,5 +1,5 @@
 # DogEared
-DogEared is a clone of goodreads, social cataloging website that allows users to track their readings, communicate with other readers, and find and discuss the books they dog-ear and love.
+DogEared is a clone of Goodreads, social cataloging website that allows users to track their readings with organized shelving. Users are able to find, shelf, comment, and rate the books they dog-ear and love.
 
 ## [Live Site](https://dogeared-app.herokuapp.com)
 
