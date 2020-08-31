@@ -54,6 +54,7 @@ DogEared is a clone of Goodreads, social cataloging website that allows users to
 
 * Ability to add customized bookshelves and put books on those new shelves
 
+![add shelf gif](app/assets/images/addShelf.gif)
 
 * Placing books on specific shelves and removing them
 * Writing reviews on books and rating them
