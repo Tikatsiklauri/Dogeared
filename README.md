@@ -49,6 +49,8 @@ DogEared is a clone of Goodreads, social cataloging website that allows users to
 ```
 
 * Smooth error handling experience for users with customized messages
+![error demo](app/assets/images/error_gif.gif)
+
 * Adding customized bookshelves
 * Placing books on specific shelves and removing them
 * Writing reviews on books and rating them
