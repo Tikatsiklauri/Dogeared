@@ -11,7 +11,9 @@ DogEared is a clone of Goodreads, social cataloging website that allows users to
 * React — front-end 
 * JavaScript — front-end
 * Redux — state management
-* AJAX — asynchronous front-end to back-end communication 
+* AJAX — asynchronous front-end to back-end communication
+* HTML5
+* CSS3
 * Heroku — domain hosting
 
 ## Key Features
@@ -89,7 +91,10 @@ DogEared is a clone of Goodreads, social cataloging website that allows users to
         end
     end
 ```
-
+## Future Features
+* Search bar for specific books/authors
+* Incorporate AWS for more book storage and uploading books
+* Follow/interract with other users
 
 
 
