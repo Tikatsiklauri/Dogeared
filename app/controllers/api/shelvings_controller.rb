@@ -25,7 +25,7 @@ class Api::ShelvingsController < ApplicationController
     
     def destroy
 
-      #this shelvingId is actually a shelf id, I (TIKA) can change this, dont get confused
+      #this shelvingId is actually a shelf id
       shelf = Shelf.find(params[:shelvingId])
       shelves = Shelf.where(user_id: current_user.id)
       shelf_ids = []

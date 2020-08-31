@@ -59,6 +59,37 @@ DogEared is a clone of Goodreads, social cataloging website that allows users to
 * Placing books on specific shelves and removing them
 * Writing reviews on books and rating them
 
+## Challenges
+
+* One of my challenges was to ensure same book could only be put on one single default shelf without duplicates but when dealing with customized new shelves, the book needed to be able to stay on the default shelf but also be put on the customized shelf as well. I utilized shelvings controller, create and destroy functions to put restrictions on each book_id contained on each shelf to determine whether the book needed to be destoryed from previous shelf after being put on a different shelf
+
+* Here is a snipet of my shelvings controller functions:
+
+```Ruby
+ def create
+      shelf = Shelf.find(params[:shelving][:shelf_id])
+      if shelf && ['Read', 'Currently Reading' , 'Want to Read'].include?(shelf.name)
+        read = Shelf.find_by(name: 'Read', user_id: current_user)
+        curr = Shelf.find_by(name: 'Currently Reading', user_id: current_user)
+        want = Shelf.find_by(name: 'Want to Read', user_id: current_user)
+        readShelf = Shelving.find_by(shelf_id: read.id, book_id: params[:shelving][:book_id])
+        currShelf = Shelving.find_by(shelf_id: curr.id, book_id:  params[:shelving][:book_id])
+        wantShelf = Shelving.find_by(shelf_id: want.id, book_id:  params[:shelving][:book_id])
+        Shelving.destroy(readShelf.id) if readShelf
+        Shelving.destroy(currShelf.id) if currShelf
+        Shelving.destroy(wantShelf.id) if wantShelf
+      end
+      @shelving = Shelving.new(shelving_params)
+        if @shelving.save
+          cody = Shelving.create(shelf_id: params[:shelving][:all_id], book_id: params[:shelving][:book_id])
+          @shelf = @shelving.shelf
+          render '/api/shelves/show'
+        else
+          render json: @shelving.errors.full_messages, status: 422
+        end
+    end
+```
+
 
 
 
