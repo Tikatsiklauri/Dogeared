@@ -6,16 +6,53 @@ DogEared is a clone of Goodreads, social cataloging website that allows users to
 ![Splash page demo](app/assets/images/new-dogeared-gif.gif)
 
 ## Technologies
-DogEared is built with Ruby on Rails  backend and PostgreSQL database, utilizing React-Redux frontend for a fast and productive single-page user experience.
+* Ruby on Rails —— back-end
+* PostgreSQL —— database
+* React —— front-end 
+* JavaScript —— front-end
+* Redux —— state management
+* AJAX —— asynchronous front-end to back-end communication 
+* Heroku —— domain hosting
 
 ## Key Features
 * Manually implemented User Authorization
-* Smooth error handling experience for users 
-* Books display with each show page
-* Bookshelves
-** Users can have bookshelves they can choose to save certain books on
-** Users can add and design more of their own bookshelves
-* Reviews
-** Users can read others people's reviews and post their own reviews on books
-* Ratings on books
+
+```Ruby
+ def self.find_by_credentials(email, password)
+        user = User.find_by(email: email)
+        return nil unless user && user.is_password?(password)
+        user
+    end
+
+    def is_password?(password)
+        bcrypt = BCrypt::Password.new(self.password_digest)
+        bcrypt.is_password?(password)
+    end
+
+    def self.generate_session_token
+        SecureRandom::urlsafe_base64
+    end
+
+    def password=(password)
+        @password = password
+        self.password_digest = BCrypt::Password.create(password)
+    end
+
+    def ensure_session_token
+        self.session_token ||= User.generate_session_token
+    end
+
+    def reset_session_token!
+        self.update!(session_token: User.generate_session_token)
+        self.session_token
+    end
+```
+
+* Smooth error handling experience for users with customized messages
+* Adding customized bookshelves
+* Placing books on specific shelves and removing them
+* Writing reviews on books and rating them
+
+
+
 
